@@ -1,0 +1,31 @@
+.nav{
+    background-color: #ADD8E6;
+    color: white3smoke;
+    display: flex;
+    justify-content: space-between;
+    padding:  1rem;
+    overflow: hidden;
+}
+
+.nav ul{
+    /* background-color: blue; */
+    list-style-type: none;
+    display: flex;
+}
+
+.nav li{
+    padding: 0 1rem;
+}
+
+ .nav li.active {
+    background-color: #555;
+    float: left;
+}
+
+.nav li:hover{
+    background-color: #777;
+}
+
+.nav li a:visited {
+    color:blue ;
+}
