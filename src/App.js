@@ -8,9 +8,14 @@ import NavBar from "./componets/NavBar";
 import New from "./pages/New";
 import Index from "./pages/Index";
 import Info from "./pages/Info";
+import Cart from "./componets/Cart";
 import "./global.css"
+import { useState } from "react";
 
 function App() {
+  
+  const [cart, setCart] = useState([])
+
   return (
     <div className="App">
       <Router>
@@ -22,6 +27,7 @@ function App() {
           <Route path="/diamonds/:id" element={<Show />} />
           <Route path="/diamonds/:id/edit" element={<Edit />} />
           <Route path="/diamonds/Info" element={<Info/>}/>
+          <Route path="/diamonds/cart" cart={cart} setCart={setCart} element={<Cart/>}/>
           {/* <Route path="/diamonds/AboutDev" element={<AboutDev/>}/> */}
           <Route path="*" elememt={<FourOFour />} />
         </Routes>
