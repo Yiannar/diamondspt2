@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import diamonds from './Diamonds'
+import Diamond from './Diamonds'
 
 
 function Cart({cart}) {
@@ -13,10 +13,10 @@ let total = cart.reduce((acc, currentValue)=> acc + currentValue.amount, 0)
             <h4>Total:${cart.length >3 ? (0.90 * total): total}</h4>
             <h6>Discount:{cart.length < 3 ? (0): (10)}%</h6>
             {
-                cart.map((diamonds)=>{
+                cart.map((diamond)=>{
                     return (
                         <ul>
-                            <li>{diamonds.shape}:{diamonds.price}</li>
+                            <li>{diamond.shape}:{diamond.price}</li>
                         </ul>
                     )
                 })
