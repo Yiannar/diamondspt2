@@ -35,6 +35,7 @@ const Checkout = ({cart}) => {
         <div>
             <h2>Checkout</h2>
             <form onSubmit={handleSubmit}>
+                
                 <label>First Name</label>
                 <input
                 name='fName'
@@ -44,6 +45,40 @@ const Checkout = ({cart}) => {
                 onChange={handleChange}
                 />
 
+                <label>Last Name</label>
+                <input
+                name='lName'
+                id='lastName'
+                type='text'
+                value={userInput.lastName}
+                onChange={handleChange}/>
+
+                <label>Email</label>
+                <input
+                name='email'
+                id='email'
+                type='text'
+                value={userInput.email}
+                onChange={handleChange}
+                />
+                <label>Address</label>
+                <input 
+                name="address" 
+                type="text" 
+                id='address'
+                value={userInput.address}
+                onChange ={handleChange}/>
+
+                <label>Zip Code</label>
+                <input 
+                name="zipCode" 
+                type="text" 
+                id='zipCode'
+                value={userInput.zipCode}
+                onChange ={handleChange}/>
+
+                <button>submit</button>
+                
             </form>
         </div>
     );

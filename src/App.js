@@ -23,7 +23,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/diamonds" element={<Index/>} />
+          <Route path="/diamonds" element={<Index cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/new" element={<New />} />
           <Route path="/diamonds/:id" element={<Show />} />
           <Route path="/diamonds/:id/edit" element={<Edit />} />

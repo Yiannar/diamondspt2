@@ -48,6 +48,12 @@ useEffect(()=>{
 // }
 
 
+function getPriceInDecimal(diamond) {
+    return (diamond[0].price / 100).toFixed(2);
+  }
+  
+
+
 return(
     <>
     <article>
@@ -55,9 +61,8 @@ return(
      <div>
             <h1 className="diamondShape">{diamond[0].shape}</h1>
             <img className="diamond-pic" src={diamond[0].image} alt='diamondpic'/>
-            <h2>{diamond?.carat}</h2>
             <table>
-                <th>
+               <tbody>
                 <tr>
                     <td><h4>Carat:</h4></td>
                     <td><h4>{diamond[0].carat}</h4></td>
@@ -76,13 +81,14 @@ return(
                 </tr>
                 <tr>
                 <td><h4>Price:</h4></td>
-                    <td><h4>{diamond[0].price}</h4></td>
+                    <td><h4>${getPriceInDecimal(diamond)}</h4></td>
                 </tr>
                 <tr>
                 <td><h4>Reported:</h4></td>
                     <td><h4>{(diamond[0].is_reported).toString()}</h4></td>
                 </tr>
-                </th>
+               
+                </tbody>
             </table>
             <div className="nav">
                 <div className="back">
@@ -97,6 +103,7 @@ return(
                 </Link>
                 <button className="delete" onClick={deleteDiamond}>Delete</button>
                 {/* <ReviewForm /> */}
+                
             </div>
         </div>}
     </article>

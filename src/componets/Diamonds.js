@@ -6,8 +6,9 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Diamonds = () => {
+const Diamonds = ({cart, setCart}) => {
     const [diamonds, setDiamonds] = useState([]);
+
 
     useEffect(() => {
         axios
@@ -18,6 +19,8 @@ const Diamonds = () => {
         })
         .catch((c) => console.warn("catch", c))
     }, [])
+
+    console.log("Type of diamonds:", typeof diamonds)
 
     return (
         <div className='diamonds'>
@@ -30,7 +33,7 @@ const Diamonds = () => {
             <br/>
 
             {diamonds.map((diamond) => {
-                return ( <Diamond key={diamond.id} diamond={diamond} />)
+                return ( <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />)
                
             })}
         </div>
