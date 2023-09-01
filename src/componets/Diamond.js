@@ -1,6 +1,6 @@
 import react from "react";
 import { Link } from "react-router-dom";
-// import './Diamond.css'
+import './Diamond.css'
 
 
 
@@ -23,18 +23,16 @@ const Diamond =({diamond, setCart, cart})=>{
     return(
         <div className="diamonds">
                             <Link to={`/diamonds/${diamond.id}`}>
-           
-                             <h1 className="shape">{diamond.shape}</h1>
-                                </Link>
+  <div className="shape">
+    <h1>{diamond.shape}</h1>
+    <img className="diamondimg" src={diamond.image} alt="diamonds"></img>
+    <h4>Price: ${getPriceInDecimal(diamond)}</h4>
+    <button className="addToCartBttn" onClick={() => updatedCart(diamond)}>
+      Add to Cart
+    </button>
+  </div>
+</Link>
 
-                             <img src={diamond.image} alt='diamonds'></img>
-
-                            <h4>Price: ${getPriceInDecimal(diamond)}</h4>
-
-                            <button onClick={()=> updatedCart(diamond)}>Add to Cart</button>
-            
-    
-           
         
         </div>
     )
