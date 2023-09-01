@@ -1,5 +1,5 @@
 .nav{
-    background-color: #ADD8E6;
+    background-color:#57C4E5;
     color: white3smoke;
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 .nav li:hover{
-    background-color: #777;
+    background-color:#E278C1;
 }
 
 .nav li a:visited {

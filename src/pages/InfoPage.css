@@ -1,0 +1,36 @@
+.diamond-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 20px; /* Gap between columns and rows */
+    background-color: #57C4E5;
+  }
+
+  h1{
+    text-align: left;
+    color: #0E1428;
+  }
+
+.card{
+    border: 1px solid black;
+    border-radius: 15px 50px 30px;
+    padding: 50px;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    background-color: #F7E1D7;
+}
+
+.card-body{
+    text-align: justify;
+    padding: 10px;
+   
+}
+
+.card-title{
+    font-size: large;
+    text-align: center;
+}
+
+.card-text{
+    font-size: small;
+}

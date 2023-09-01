@@ -15,7 +15,10 @@ const Diamond =({diamond, setCart, cart})=>{
     }
    
 
-
+    function getPriceInDecimal(diamond) {
+        return (diamond.price / 100).toFixed(2);
+      }
+      
 
     return(
         <div className="diamonds">
@@ -26,7 +29,7 @@ const Diamond =({diamond, setCart, cart})=>{
 
                              <img src={diamond.image} alt='diamonds'></img>
 
-                            <h4>Price:{diamond.price}</h4>
+                            <h4>Price: ${getPriceInDecimal(diamond)}</h4>
 
                             <button onClick={()=> updatedCart(diamond)}>Add to Cart</button>
             
