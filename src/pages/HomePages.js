@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom'
 import Diamond from '../componets/Diamond';
 import styles from './cards.module.css'
 import ImageSlideshow from '../componets/ImageSlideShow';
-// import styles from './homePage.module.css'
+import './HomePage.css'
+import DiamondsImage1 from '../../src/assets/DiamondsImage1.png';
+import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
+import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
+
 
 const API = process.env.REACT_APP_API_URL
 
@@ -13,20 +17,28 @@ const HomePage = ({cart, setCart}) => {
 
     const [diamonds, setDiamonds] = useState([])
 
-    const images =[
-        'https://cdn.pixabay.com/photo/2016/02/14/09/45/diamond-1199183_1280.jpg',
-        'https://cdn.pixabay.com/photo/2016/02/08/07/42/diamond-1186139_640.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShdGF44eRiP5uXakAKCbY3h0VQPCbwrDLq-A&usqp=CAU'
-    ]
+    // const images = [{
+    //     DiamondsImage2 : 'images/DiamondsImage2.png'
+    // }]
+       const images =[
+       // DiamondsImage1,
+        DiamondsImage2,
+        DiamondsImage4,
+       ]
+       
+        // // 'https://cdn.pixabay.com/photo/2016/02/08/07/42/diamond-1186139_640.jpg',
+       
+    
       
     
     useEffect(() =>{
         axios
         .get(`${API}/diamonds`)
         .then((res)=>{
-            const shuffledData = shuffleArray(res.data)
+             const shuffledData = shuffleArray(res.data)
             const firstThreeItems = shuffledData.slice(0,3)
-            setDiamonds(firstThreeItems)
+            //const firstThreeItems = res.data.slice(0, 3);
+            setDiamonds(firstThreeItems);
         })
         .catch((error)=>{
             console.error('Error could not load first three items', error)
@@ -43,9 +55,9 @@ const HomePage = ({cart, setCart}) => {
       };
 
     return (
-        <div>
+        <div className='homepage-container'>
             <Link to='/diamonds'>
-                <h1>Welcome to the Diamonds App</h1>
+                <h1 className='title'>Welcome to the Diamonds App</h1>
             </Link> 
 
             <ImageSlideshow images={images}/>

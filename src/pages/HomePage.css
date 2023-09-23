@@ -1,0 +1,22 @@
+/* .homepage-container{
+  background-image: url( 'https://cdn.pixabay.com/photo/2016/02/14/09/45/diamond-1199183_1280.jpg')
+} */
+
+.title{
+    text-align: center;
+    margin-top: 0;
+    color: white;
+}
+
+ul {
+    display: flex; /* Display list items horizontally */
+    list-style: none; /* Remove list bullet points */
+    padding: 0; /* Remove default padding */
+    background-color: white;
+  }
+  
+  /* Style each list item (Diamond component) */
+  li {
+    margin-right: 10px; /* Add spacing between items */
+    background-color: white;
+  }

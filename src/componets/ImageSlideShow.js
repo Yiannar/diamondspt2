@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ImageSlideshow.css'
+import './ImageSlideShow.css'
 
 const ImageSlideshow = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,7 +7,7 @@ const ImageSlideshow = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change slide every 5 seconds 
+    }, 5000); // Change slide every 5 seconds (adjust as needed)
 
     return () => {
       clearInterval(interval);
@@ -15,10 +15,8 @@ const ImageSlideshow = ({ images }) => {
   }, [images]);
 
   return (
-    <div className="slideshow-container">
-      {images.map((image, index) => (
-        <img key={index} src={image}  alt={`Slide ${index}`} className={index === currentIndex ? 'slide active' : 'slide'}/>
-      ))}
+    <div className="slideshow">
+      <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
     </div>
   );
 };

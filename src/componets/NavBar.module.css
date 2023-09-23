@@ -1,32 +1,46 @@
-.nav{
-    background-color:#57c4e5;
-    color: white3smoke;
+/* NavBar.module.css */
+
+/* Existing styles for the navbar */
+.nav {
+    background-color: #57c4e5;
+    color: #333;
     display: flex;
     justify-content: space-between;
-    padding:  1rem;
-    overflow: hidden;
-    /* border: 2px solid black; */
-}
-
-.nav ul{
-    /* background-color: blue; */
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navUL {
     list-style-type: none;
     display: flex;
-}
-
-.nav li{
-    padding: 0 1rem;
-}
-
- .nav li.active {
-    background-color: #555;
-    float: left;
-}
-
-.nav li:hover{
-    background-color:#E278C1;
-}
-
-.nav li a:visited {
-    color:blue ;
-}
+    gap: 20px;
+  }
+  
+  .navLI {
+    padding: 0;
+  }
+  
+  .navLI.active {
+    background-color: #007BFF;
+  }
+  
+  .navLI:hover {
+    background-color: #0056b3;
+  }
+  
+  .navLink:visited {
+    color: #333;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 20px; /* Add rounded corners to links */
+    padding: 10px 20px; /* Add padding for better aesthetics */
+  }
+  
+  .navLink:hover {
+    color: #fff;
+  }
+  
