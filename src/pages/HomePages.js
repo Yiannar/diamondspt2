@@ -3,10 +3,8 @@ import axios from "axios"
 //import { useParams, useState, useEffect } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Diamond from '../componets/Diamond';
-import styles from './cards.module.css'
 import ImageSlideshow from '../componets/ImageSlideShow';
 import './HomePage.css'
-import DiamondsImage1 from '../../src/assets/DiamondsImage1.png';
 import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
 import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
 
@@ -67,7 +65,6 @@ const HomePage = ({cart, setCart}) => {
                    <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />
                 ))}
             </ul>
-            
         
         </div>
     );
