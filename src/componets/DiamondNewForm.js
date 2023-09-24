@@ -1,14 +1,16 @@
-import bootstrap from 'bootstrap'
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import'./DiamondNewForm.css'
 import Diamondlogo from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Diamondlogo.png'
+import ReactModal from 'react-modal';
+
 
 const API = process.env.REACT_APP_API_URL;
 
 function DiamondNewForm (){
     let navigate = useNavigate()
+
     
     const [diamond, setDiamond]= useState({
         shape: '',
@@ -31,6 +33,8 @@ const addDiamond =(newDiamond)=>{
         .catch((c)=> console.warn('catch',c))
 }
 
+const [showModal, setShowModal] = useState(false);
+  
 const handleTextChange = (e)=>{
     setDiamond({...diamond, [e.target.id]: e.target.value})
 }
@@ -39,7 +43,12 @@ const handleTextChange = (e)=>{
 const handleSubmit = (e)=>{
     e.preventDefault()
     addDiamond(diamond)
+    setShowModal(true)
 }
+
+  const closeModal = () => {
+    setShowModal(true); // Close the modal
+  };
 
 return (
     <div className='form-container'>
@@ -135,6 +144,18 @@ return (
             <button class="btn btn-primary" type='submit'>Submit</button>
         </form>
         </div>
+        <ReactModal
+        isOpen={showModal}
+        onRequestClose={closeModal}
+        contentLabel="Success Modal"
+            >
+        <h2>Form Submitted Successfully</h2>
+        <p>Your submission was successful!</p>
+         <button onClick={closeModal}>Close Modal</button>
+        </ReactModal>
+
+   
+        
         {/* <Link to={`/diamonds`}>
             <button className='back-button'>Back</button>
         </Link> */}
