@@ -53,7 +53,7 @@ const HomePage = ({cart, setCart}) => {
       };
 
     return (
-        <div className='homepage-container'>
+        <div className='homepage-container' style={{ height: 'auto' }}>
             <Link to='/diamonds'>
                 <h1 className='title'>Welcome to the Diamonds App</h1>
             </Link> 

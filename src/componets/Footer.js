@@ -16,7 +16,7 @@ const Footer = () => {
   const containerStyle = {
     display: 'flex',
     justifyContent: 'space-between',
-    backgroundColor: '#AF9690',
+    backgroundColor: '#FCFBF4',
     padding: '40px',
     textAlign: 'center',
   };
@@ -73,7 +73,7 @@ const Footer = () => {
                />
               <button type='submit'>Submit</button>
             </form>
-            <h2><Link to='/diamonds/AboutDev'>About Developer</Link></h2>
+            <h4 style={underline}><Link to='/diamonds/AboutDev'>About Developer</Link></h4>
           </div>
 
           {/* Opening Hours */}

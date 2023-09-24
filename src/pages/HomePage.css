@@ -1,11 +1,11 @@
-/* .homepage-container{
-  background-image: url( 'https://cdn.pixabay.com/photo/2016/02/14/09/45/diamond-1199183_1280.jpg')
-} */
+.homepage-container{
+  background-color: #FCFBF4;
+}
 
 .title{
     text-align: center;
     margin-top: 0;
-    color: white;
+    color: blue;
 }
 
 ul {

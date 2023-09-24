@@ -1,0 +1,31 @@
+.image {
+    height: 50%;
+    width: 50%;
+  }
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:  #57c4e5;; /* Light grey background color */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .form-wrapper {
+    background-color: #fff; /* White background color for the form */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+    max-width: 500px; /* Adjust the maximum width as needed */
+  }
+  
+  .form-wrapper input {
+    margin-bottom: 40px; /* Adjust the margin as needed */
+    /* padding: 10px; Adjust the padding as needed */
+    text-align: center;
+  }
+  
+  /* Additional styles for form elements if needed */
+  

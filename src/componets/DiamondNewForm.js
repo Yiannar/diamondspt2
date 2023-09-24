@@ -1,7 +1,10 @@
+import bootstrap from 'bootstrap'
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import'./DiamondForm.css'
+import'./DiamondNewForm.css'
+import Diamondlogo from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Diamondlogo.png'
+
 const API = process.env.REACT_APP_API_URL;
 
 function DiamondNewForm (){
@@ -39,18 +42,26 @@ const handleSubmit = (e)=>{
 }
 
 return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='shape'>Shape:</label>
+    <div className='form-container'>
+        <div className='form-wrapper'>
+            <img src={Diamondlogo} class="image" />
+        <form  class="row g-3" onSubmit={handleSubmit}>
+            <div class="col">
+            <label htmlFor='shape'>Shape</label>
             <input
+            class="form-control"
             id='shape'
             value={diamond.shape}
             type='text'
             onChange={handleTextChange}
             placeholder="Princess"
             required/>
-            <label htmlFor='url'>URL:</label>
+            </div>
+            
+            <div class="col">
+            <label htmlFor='url'>URL</label>
             <input
+            class="form-control"
             id='image'
             value={diamond.image}
             type='text'
@@ -59,8 +70,11 @@ return (
             onChange={handleTextChange}
             placeholder="https://"
             />
-            <label htmlFor='carat'>Carat:</label>
+            </div>
+            <div class="col" >
+            <label htmlFor='carat'>Carat</label>
             <input
+            class="form-control"
             id='carat'
             type= 'number'
             min='0'
@@ -68,45 +82,62 @@ return (
             onChange={handleTextChange}
             placeholder="1.04"
             required/>
-            <label htmlFor='color'>Color:</label>
+           </div>
+
+           <div class="col" > 
+            <label htmlFor='color'>Color</label>
             <input
+            class="form-control"
             id='color'
             type= 'text'
             value={diamond.color}
             onChange={handleTextChange}
             placeholder="D"
             required/>
-            <label htmlFor='cut'>Cut:</label>
+            </div>
+            
+            <div class="col">
+            <label htmlFor='cut'>Cut</label>
             <input
+            class="form-control"
             id='cut'
             type= 'text'
             value={diamond.cut}
             onChange={handleTextChange}
             placeholder="Excellent"
             required/>
-            <label htmlFor='price'>Price:</label>
+            </div>
+          
+           <div class="col">
+            <label htmlFor='price'>Budget</label>
             <input
+            class="form-control"
             id='price'
             type= 'number'
             min='0'
             value={diamond.price}
             onChange={handleTextChange}
-            placeholder="32,000"
+            placeholder="$32,000.00"
             required/>
-             <label htmlFor="is_reported">Reported:</label>
+            </div>
+            
+            {/* <div class="col"> 
+            <label htmlFor="is_reported">Reported</label>
             <input
+            class="form-control"
             id="is_reported"
             type="boolean"
             value={diamond.is_reported}
             onChange={handleTextChange}
-        
             />
+            </div> */}
             <br/>
-            <button className='submit' type='submit'>Submit</button>
+            <button class="btn btn-primary" type='submit'>Submit</button>
         </form>
-        <Link to={`/diamonds`}>
+        </div>
+        {/* <Link to={`/diamonds`}>
             <button className='back-button'>Back</button>
-        </Link>
+        </Link> */}
     </div>
 )
 }
