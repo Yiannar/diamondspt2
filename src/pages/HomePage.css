@@ -1,5 +1,6 @@
 .homepage-container{
-  background-color: #FCFBF4;
+  background-color:#bbdcde;
+  padding-bottom: none;
 }
 
 .title{
@@ -12,11 +13,11 @@ ul {
     display: flex; /* Display list items horizontally */
     list-style: none; /* Remove list bullet points */
     padding: 0; /* Remove default padding */
-    background-color: white;
+    /* background-color: white; */
   }
   
   /* Style each list item (Diamond component) */
   li {
     margin-right: 10px; /* Add spacing between items */
-    background-color: white;
+    /* background-color: white; */
   }

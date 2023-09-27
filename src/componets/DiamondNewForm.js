@@ -27,13 +27,15 @@ const addDiamond =(newDiamond)=>{
     axios
     .post(`${API}/diamonds`, newDiamond)
     .then(
-        ()=>
+        ()=> // update the navigate once user dashboard is created 
+            // navigate back to the user dashboard as an inquiry 
             navigate(`/diamonds`)
         )
         .catch((c)=> console.warn('catch',c))
 }
 
 const [showModal, setShowModal] = useState(false);
+const [submitted, setSubmitted] = useState(false)
   
 const handleTextChange = (e)=>{
     setDiamond({...diamond, [e.target.id]: e.target.value})
@@ -43,18 +45,25 @@ const handleTextChange = (e)=>{
 const handleSubmit = (e)=>{
     e.preventDefault()
     addDiamond(diamond)
+    setSubmitted(!submitted)
     setShowModal(true)
 }
 
   const closeModal = () => {
-    setShowModal(true); // Close the modal
+    setShowModal(false); // Close the modal
   };
 
+  
+
 return (
+
     <div className='form-container'>
         <div className='form-wrapper'>
             <img src={Diamondlogo} class="image" />
         <form  class="row g-3" onSubmit={handleSubmit}>
+            {/* {submitted?(
+                <div><h3>You have Successfully created a new diamond</h3></div>
+            ):(<div></div>)} */}
             <div class="col">
             <label htmlFor='shape'>Shape</label>
             <input
@@ -144,6 +153,7 @@ return (
             <button class="btn btn-primary" type='submit'>Submit</button>
         </form>
         </div>
+        {/* modal to inform that the user has submitted but if it doesnt work use an alert */}
         <ReactModal
         isOpen={showModal}
         onRequestClose={closeModal}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
-import './Footer.css';
 import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
     const [userInput, setUserInput] = useState([])
@@ -13,42 +13,15 @@ const Footer = () => {
     const handleSubmit = (e) =>{
         e.preventdefault()
     }
-  const containerStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: '#FCFBF4',
-    padding: '40px',
-    textAlign: 'center',
-  };
 
-  const columnStyle = {
-    flex: '1',
-    padding: '10px',
-    textAlign: 'center',
-  };
-
-  const tableStyle = {
-    width: '100%',
-    textAlign: 'center', 
-  };
-
-
-  const tableCellStyle = {
-    textAlign: 'center',
-  };
-
-  const underline = {
-    textDecoration: 'underline',
-    color: "blue", 
-  }
-
+ 
   return (
-    <div>
+    
       <footer>
-        <div style={containerStyle}>
+        <div className='container'>
           {/* About Company */}
-          <div style={columnStyle}>
-            <h5 style={underline}>About company</h5>
+          <div className='column'>
+            <h5 className='underline'>About company</h5>
             <p>
               This website demonstrates an e-commerce application about diamonds.
             </p>
@@ -62,8 +35,8 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div style={columnStyle}>
-            <h5 style={underline}>Newsletter</h5>
+          <div className='column'>
+            <h5 className='underline'>Newsletter</h5>
             <form onSubmit={handleSubmit} >
               <input 
               type="text" 
@@ -73,32 +46,31 @@ const Footer = () => {
                />
               <button type='submit'>Submit</button>
             </form>
-            <h4 style={underline}><Link to='/diamonds/AboutDev'>About Developer</Link></h4>
+            <h4 className='underline'><Link to='/diamonds/AboutDev'>About Developer</Link></h4>
           </div>
 
           {/* Opening Hours */}
-          <div style={columnStyle}>
-            <h5 style={underline}>Opening hours</h5>
-            <table style={tableStyle}>
+          <div className='column'>
+            <h5 className='underline'>Opening hours</h5>
+            <table className='tableStyle'>
               <tbody>
                 <tr>
-                  <td style={tableCellStyle}>Mon - Thu:</td>
-                  <td style={tableCellStyle}>8am - 9pm</td>
+                  <td className='tableCellStyle'>Mon - Thu:</td>
+                  <td className='tableCellStyle'>8am - 9pm</td>
                 </tr>
                 <tr>
-                  <td style={tableCellStyle}>Fri - Sat:</td>
-                  <td style={tableCellStyle}>8am - 1am</td>
+                  <td className='tableCellStyle'>Fri - Sat:</td>
+                  <td className='tableCellStyle'>8am - 1am</td>
                 </tr>
                 <tr>
-                  <td style={tableCellStyle}>Sunday:</td>
-                  <td style={tableCellStyle}>9am - 10pm</td>
+                  <td className='tableCellStyle'>Sunday:</td>
+                  <td className='tableCellStyle'>9am - 10pm</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </footer>
-    </div>
   );
 };
 

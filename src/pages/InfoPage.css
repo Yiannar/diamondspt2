@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-gap: 20px; /* Gap between columns and rows */
-    background-color: #57C4E5;
+    background-color: #bbdcde
   }
 
   h1{

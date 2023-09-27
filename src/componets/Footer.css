@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #05176d; /* Corrected color value without single quotes */
+  color: #58a8d7;
+  padding-top: none;
+  text-align: center;
+  
+}
+
+  .column{
+    flex: 1;
+    padding: 10px ;
+    text-align: center;
+  }
+  
+  .tableStyle{
+    width: 100%;
+    text-align: center ;
+  }
+
+  .tableCellStyle{
+    text-align: center;
+  }
+
+.underline{
+    text-decoration: underline;
+    color: #58a8d7;
+}

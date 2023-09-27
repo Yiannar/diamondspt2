@@ -2,17 +2,27 @@
 
 /* Existing styles for the navbar */
 .nav {
-    background-color: #57c4e5;
-    color: #333;
+    background-color: #05176d;;
+    /* color: #333; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 20px;
+    color: #58a8d7;
+    /* padding: 10px 20px; */
+  }
+
+  .nav li:hover{
+    background-color: #58a8d7;
+    color: white;
+  }
+
+  .nav a {
+    color: white;
   }
 
   .nav img {
-    width: 120px;
-    height: 120px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
   }
   
@@ -27,27 +37,15 @@
     padding: 0;
   }
   
-  .navLI.active {
-    background-color: #007BFF;
-  }
-  
-  .navLI:hover {
-    background-color: #0056b3;
-  }
-  
-  .navLink:visited {
-    color: #333;
-  }
-  
-  .navLink {
+  .a{
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    border-radius: 20px; /* Add rounded corners to links */
-    padding: 10px 20px; /* Add padding for better aesthetics */
   }
   
-  .navLink:hover {
-    color: #fff;
-  }
+  /* .navLI:hover {
+    background-color: black;
+  } */
+  
+  /* .navLink:visited {
+    color: #333;
+  } */
   
