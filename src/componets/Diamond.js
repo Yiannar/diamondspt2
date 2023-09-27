@@ -32,8 +32,6 @@ const Diamond =({diamond, setCart, cart})=>{
     </button>
   </div>
 </Link>
-
-        
         </div>
     )
 };

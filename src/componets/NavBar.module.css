@@ -12,12 +12,13 @@
   }
 
   .nav li:hover{
-    background-color: #58a8d7;
+    background-color: #bbdcde;
     color: white;
+    border-radius: 15px 50px 30px;
   }
 
   .nav a {
-    color: white;
+    color: #58a8d7;
   }
 
   .nav img {

@@ -4,7 +4,6 @@ import DiamondNewForm from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/d
 const New = () => {
     return (
         <div>
-            <h2 style={{textAlign : 'center'}}>Enter a custom Diamond</h2>
             <DiamondNewForm />
             
         </div>

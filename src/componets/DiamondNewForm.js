@@ -3,6 +3,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import'./DiamondNewForm.css'
 import Diamondlogo from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Diamondlogo.png'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import ReactModal from 'react-modal';
 
 
@@ -56,119 +59,70 @@ const handleSubmit = (e)=>{
   
 
 return (
-
     <div className='form-container'>
-        <div className='form-wrapper'>
+        <div className='title'><h2 >Enter a custom Diamond</h2></div>
             <img src={Diamondlogo} class="image" />
-        <form  class="row g-3" onSubmit={handleSubmit}>
-            {/* {submitted?(
-                <div><h3>You have Successfully created a new diamond</h3></div>
-            ):(<div></div>)} */}
-            <div class="col">
-            <label htmlFor='shape'>Shape</label>
-            <input
-            class="form-control"
-            id='shape'
-            value={diamond.shape}
-            type='text'
-            onChange={handleTextChange}
-            placeholder="Princess"
-            required/>
-            </div>
-            
-            <div class="col">
-            <label htmlFor='url'>URL</label>
-            <input
-            class="form-control"
-            id='image'
-            value={diamond.image}
-            type='text'
-            pattern='http[s]*://.+'
-            required
-            onChange={handleTextChange}
-            placeholder="https://"
-            />
-            </div>
-            <div class="col" >
-            <label htmlFor='carat'>Carat</label>
-            <input
-            class="form-control"
-            id='carat'
-            type= 'number'
-            min='0'
-            value={diamond.carat}
-            onChange={handleTextChange}
-            placeholder="1.04"
-            required/>
-           </div>
+            <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off" >
 
-           <div class="col" > 
-            <label htmlFor='color'>Color</label>
-            <input
-            class="form-control"
-            id='color'
-            type= 'text'
-            value={diamond.color}
-            onChange={handleTextChange}
-            placeholder="D"
-            required/>
-            </div>
-            
-            <div class="col">
-            <label htmlFor='cut'>Cut</label>
-            <input
-            class="form-control"
-            id='cut'
-            type= 'text'
-            value={diamond.cut}
-            onChange={handleTextChange}
-            placeholder="Excellent"
-            required/>
-            </div>
-          
-           <div class="col">
-            <label htmlFor='price'>Budget</label>
-            <input
-            class="form-control"
-            id='price'
-            type= 'number'
-            min='0'
-            value={diamond.price}
-            onChange={handleTextChange}
-            placeholder="$32,000.00"
-            required/>
-            </div>
-            
-            {/* <div class="col"> 
-            <label htmlFor="is_reported">Reported</label>
-            <input
-            class="form-control"
-            id="is_reported"
-            type="boolean"
-            value={diamond.is_reported}
-            onChange={handleTextChange}
-            />
-            </div> */}
-            <br/>
-            <button class="btn btn-primary" type='submit'>Submit</button>
-        </form>
-        </div>
-        {/* modal to inform that the user has submitted but if it doesnt work use an alert */}
-        <ReactModal
-        isOpen={showModal}
-        onRequestClose={closeModal}
-        contentLabel="Success Modal"
-            >
-        <h2>Form Submitted Successfully</h2>
-        <p>Your submission was successful!</p>
-         <button onClick={closeModal}>Close Modal</button>
-        </ReactModal>
+      <TextField 
+      id="outlined-required" 
+      label="Shape" 
+      variant="outlined" 
+      value={diamond.shape} 
+      onChange={handleTextChange}
+      size="small" />
 
-   
+      <TextField 
+      id="outlined-required" 
+      label="Image Url" 
+      variant="outlined" 
+      value={diamond.image} 
+      onChange={handleTextChange} 
+      pattern='http[s]*://.+' 
+      size="small"/>
+
+      <TextField
+          id="outlined-number"
+          label="Carat"
+          type="number"
+          size="small"
+          InputLabelProps={{
+            shrink: true,
+          }} />
+
+         <TextField 
+         id="outlined-required" 
+         label="Color" 
+         variant="outlined" 
+         value={diamond.color} 
+         onChange={handleTextChange}
+         size="small" />
         
-        {/* <Link to={`/diamonds`}>
-            <button className='back-button'>Back</button>
-        </Link> */}
+         <TextField 
+         id="outlined-required" 
+         label="Cut" 
+         variant="outlined" 
+         value={diamond.cut} 
+         onChange={handleTextChange}
+         size="small" />
+        
+         <TextField 
+         id="outlined-number" 
+         label="Price" 
+         type="number"
+         size="small"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          />
+    </Box>
+   
     </div>
 )
 }

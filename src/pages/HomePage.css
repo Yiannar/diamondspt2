@@ -1,13 +1,14 @@
 .homepage-container{
-  background-color:#bbdcde;
+  background-color:#58a8d7;
+  padding-top: 40px;
   padding-bottom: none;
 }
 
-.title{
+/* .title{
     text-align: center;
     margin-top: 0;
     color: blue;
-}
+} */
 
 ul {
     display: flex; /* Display list items horizontally */

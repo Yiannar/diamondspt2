@@ -1,16 +1,19 @@
-.image {
-    height: 50%;
-    width: 50%;
-  }
-
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:  #57c4e5;; /* Light grey background color */
+    background-color: #58a8d7; /* Light grey background color */
     padding: 20px;
     text-align: center;
+  }
+  
+
+  .title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px; /* Add some margin at the bottom to create spacing */
+    color: #bbdcde;
   }
   
   .form-wrapper {

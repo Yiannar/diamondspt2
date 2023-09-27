@@ -1,36 +1,49 @@
 .diamond-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 3fr); /* 3 columns */
     grid-gap: 20px; /* Gap between columns and rows */
-    background-color: #bbdcde
+    background-color: #58a8d7;
+    padding: 20px; /* Add padding to the grid container */
+    justify-content: center; /* Center the grid horizontally */
+    align-items: flex-start; /* Align grid items at the top of each cell */
   }
-
-  h1{
-    text-align: left;
-    color: #0E1428;
+  
+  .h1 {
+    grid-column: span 3; /* Span the title across all 3 columns */
+    text-align: center;
+    color: #05176d;
   }
-
-.card{
+  
+  .card-container {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    flex-direction: row; /* Arrange cards horizontally */
+    justify-content: space-between; /* Space cards evenly horizontally */
+    width: 100%; /* Ensure cards span the full width of the grid cell */
+  }
+  
+  .card {
     border: 1px solid black;
     border-radius: 15px 50px 30px;
-    padding: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px; /* Reduce padding */
     width: 300px;
     height: 150px;
+    background-color: #bbdcde;
+    display: flex; /* Display card content as a column */
+    flex-direction: column; /* Stack card content vertically */
+    justify-content: space-between; /* Space between card content */
     margin: 10px;
-    background-color: white;
-}
-
-.card-body{
-    text-align: justify;
-    padding: 10px;
-   
-}
-
-.card-title{
+  }
+  
+  .card-title {
     font-size: large;
     text-align: center;
-}
-
-.card-text{
+    color: #05176d;
+  }
+  
+  .card-text {
     font-size: small;
-}
+    color: #05176d;
+    text-align: justify;
+  }
+  

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    /* background-color: #57c4e5; */
+    background-color: #58a8d7;
     padding: 20px; /* Add some padding for spacing */
   }
   .shape {
@@ -15,9 +15,10 @@
     align-items: center;
     text-align: center;
     border-radius: 15px 50px 30px;
-    background-color: white;
+    background-color:#bbdcde ;
     transition: transform 0.2s;
     /* box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17); */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
 
   ul{
@@ -27,6 +28,11 @@
   .shape h1 {
     font-size: 24px; /* Increase font size */
     margin-bottom: 20px; /* Increase margin */
+    color: #05176d;
+  }
+
+  .shape h4{
+    color: #05176d;
   }
   
   .diamondimg {
