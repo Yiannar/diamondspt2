@@ -7,6 +7,7 @@ import ImageSlideshow from '../componets/ImageSlideShow';
 import './HomePage.css'
 import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
 import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
+import HomePageModal from '../componets/HomePageModal';
 
 
 const API = process.env.REACT_APP_API_URL
@@ -54,6 +55,10 @@ const HomePage = ({cart, setCart}) => {
 
     return (
         <div className='homepage-container' style={{ height: 'auto' }}>
+            <div className='header'></div>
+
+            <HomePageModal/>
+
             {/* <Link to='/diamonds'>
                 <h1 className='title'>Welcome to the Diamonds App</h1>
             </Link>  */}

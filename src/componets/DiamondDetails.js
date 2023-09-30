@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import Reviews from ".//Reviews"
+// import './DiamondDetails.css'
 // import ReviewForm from './ReviewForm'
 
 const API = process.env.REACT_APP_API_URL
@@ -56,7 +57,7 @@ function getPriceInDecimal(diamond) {
 
 return(
     <>
-    <article>
+    <article >
      {diamond[0]&&    
      <div>
             <h1 className="diamondShape">{diamond[0].shape}</h1>

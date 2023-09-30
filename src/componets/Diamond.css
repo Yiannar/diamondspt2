@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    background-color: #58a8d7;
+    background-color: white;
     padding: 20px; /* Add some padding for spacing */
   }
   .shape {
