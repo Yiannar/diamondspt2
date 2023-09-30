@@ -1,0 +1,34 @@
+/* Add this CSS to your stylesheet */
+.banner {
+    display: flex;
+    padding: 20px;
+    background-color: #05176d;
+    color: #58a8d7;
+    text-align: center;
+    align-items: center;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.Prevbutton {
+    /* Button styles */
+}
+
+.Nextbutton {
+    /* Button styles */
+}
+
+p {
+    /* Paragraph styles */
+    flex-grow: 1; /* Expand to fill the available space */
+    margin: 0; /* Remove default margin */
+}
+ 
+

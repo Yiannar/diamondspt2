@@ -14,14 +14,19 @@ import "./global.css"
 import { useState } from "react";
 import ContactUs from "./componets/ContactUs";
 import AboutDev from "./componets/AboutDev";
+import Banner from "./componets/Banner";
+
 
 function App() {
+
 
   const [cart, setCart] = useState([])
 
   return (
     <div className="App">
+
       <Router>
+        <Banner/>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

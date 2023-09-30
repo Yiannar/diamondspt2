@@ -10,6 +10,7 @@ import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
 import HomePageModal from '../componets/HomePageModal';
 
 
+
 const API = process.env.REACT_APP_API_URL
 
 const HomePage = ({cart, setCart}) => {
@@ -53,10 +54,10 @@ const HomePage = ({cart, setCart}) => {
         return shuffledArray;
       };
 
+      
+
     return (
         <div className='homepage-container' style={{ height: 'auto' }}>
-            <div className='header'></div>
-
             <HomePageModal/>
 
             {/* <Link to='/diamonds'>
