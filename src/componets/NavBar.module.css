@@ -8,14 +8,12 @@
     justify-content: space-around;
     align-items: center;
     color: #58a8d7;
-    border: 5px solid black;
+   border-bottom: 2px solid black;
     /* padding: 10px 20px; */
   }
 
   .nav li:hover{
-    background-color: #bbdcde;
-    color: white;
-    border-radius: 15px 50px 30px;
+    text-decoration: underline;
   }
 
   .nav a {
@@ -23,8 +21,8 @@
   }
 
   .nav img {
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
   }
   

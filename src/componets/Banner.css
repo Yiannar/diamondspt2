@@ -3,7 +3,8 @@
     display: flex;
     padding: 20px;
     background-color: #05176d;
-    color: #58a8d7;
+    color: white;
+    font-weight: bold;
     text-align: center;
     align-items: center;
 }

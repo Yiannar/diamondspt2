@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import Reviews from ".//Reviews"
-// import './DiamondDetails.css'
+import './DiamondDetails.css'
 // import ReviewForm from './ReviewForm'
 
 const API = process.env.REACT_APP_API_URL
@@ -64,6 +64,7 @@ return(
             <img className="diamond-pic" src={diamond[0].image} alt='diamondpic'/>
             <table>
                <tbody>
+                <h4>Details and Description</h4>
                 <tr>
                     <td><h4>Carat:</h4></td>
                     <td><h4>{diamond[0].carat}</h4></td>

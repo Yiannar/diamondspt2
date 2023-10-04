@@ -7,6 +7,7 @@ import ImageSlideshow from '../componets/ImageSlideShow';
 import './HomePage.css'
 import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
 import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
+import HomeLanding from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/HomeLanding.mp4'
 import HomePageModal from '../componets/HomePageModal';
 
 
@@ -60,12 +61,21 @@ const HomePage = ({cart, setCart}) => {
         <div className='homepage-container' style={{ height: 'auto' }}>
             <HomePageModal/>
 
+            <div>
+                <p>Image goes here link to new product</p>
+            </div>
+                <video src={HomeLanding} controls autostart autoPlay alt='Home Landing Video' className='homeLanding'></video>
+        
+
+
             {/* <Link to='/diamonds'>
                 <h1 className='title'>Welcome to the Diamonds App</h1>
             </Link>  */}
 
-            <ImageSlideshow images={images}/>
+            {/* <ImageSlideshow images={images}/> */}
 
+            
+            <h3>Shop by category</h3>
             <ul>
                 {diamonds.map((diamond)=>(
                    <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />

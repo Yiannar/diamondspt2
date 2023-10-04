@@ -10,6 +10,12 @@
     color: blue;
 } */
 
+
+.homeLanding{
+  width: 1450px;
+  height: auto;
+  margin: auto;
+}
 ul {
     display: flex; /* Display list items horizontally */
     list-style: none; /* Remove list bullet points */
@@ -22,3 +28,4 @@ ul {
     margin-right: 10px; /* Add spacing between items */
     /* background-color: white; */
   }
+
