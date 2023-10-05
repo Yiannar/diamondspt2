@@ -7,7 +7,12 @@ import ImageSlideshow from '../componets/ImageSlideShow';
 import './HomePage.css'
 import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
 import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
-import HomeLanding from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/HomeLanding.mp4'
+import HomeLanding2 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/HomeLanding2.mp4'
+import Home2 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home2.png'
+import Home3 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home3.png'
+import Home4 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home4.png'
+import Home5 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home5.png'
+import Home6 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home6.png'
 import HomePageModal from '../componets/HomePageModal';
 
 
@@ -64,7 +69,7 @@ const HomePage = ({cart, setCart}) => {
             <div>
                 <p>Image goes here link to new product</p>
             </div>
-                <video src={HomeLanding} controls autostart autoPlay alt='Home Landing Video' className='homeLanding'></video>
+                <video src={HomeLanding2} autoPlay loop muted className='homeLanding' />
         
 
 
@@ -81,7 +86,14 @@ const HomePage = ({cart, setCart}) => {
                    <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />
                 ))}
             </ul>
-        
+            <div>
+            <img src={Home2} className='home2'/>
+            <img src={Home3} className='home3'/>
+            <img src={Home4} className='home4'/>
+            <img src={Home5} className='home5'/>
+            <img src={Home6} className='home6'/>
+
+            </div>
         </div>
     );
 };
