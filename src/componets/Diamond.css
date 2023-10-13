@@ -1,20 +1,21 @@
 .diamonds {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    /* grid-gap: 20px; */
     background-color: white;
     padding: 20px; /* Add some padding for spacing */
+    margin-left: 20px;
   }
   .shape {
     border: 1px solid black;
-    padding: 40px; /* Increase padding for more space inside the shape */
+    padding: 30px; /* Increase padding for more space inside the shape */
     width: 250px; /* Increase width */
     height: 250px; /* Increase height */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 15px 50px 30px;
+    /* border-radius: 15px 50px 30px; */
     background-color:#B1D4E0 ;
     transition: transform 0.2s;
     /* box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17); */

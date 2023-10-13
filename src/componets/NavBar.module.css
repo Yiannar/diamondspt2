@@ -16,7 +16,7 @@
   }
 
   .navbar.sticky {
-    background-color: pink;
+    /* background-color: pink; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -24,9 +24,9 @@
     transition: 3s ease-in-out;
   }
 
-  .navbar.sticky li {
+  /* .navbar.sticky li {
     background-color: black;
-  }
+  } */
 
 
   .nav li:hover{
@@ -41,6 +41,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
+    float: left;
   }
   
   

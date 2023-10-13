@@ -1,13 +1,17 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #58a8d7; /* Light grey background color */
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #58a8d7; /* Light grey background color */
+  padding: 20px;
+  text-align: left; /* Set the text alignment to left */
+}
+
+  .form-img{
+    width: 500px;
+    height: 500px;
   }
-  
 
   .title {
     text-align: center;

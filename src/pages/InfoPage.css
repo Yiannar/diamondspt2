@@ -1,49 +1,49 @@
-/* .diamond-info {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr); 
-    grid-gap: 20px; 
-    background-color: #58a8d7;
-    padding: 20px; 
-    justify-content: center; 
-    align-items: flex-start; 
-  }
-  
-  .h1 {
-    grid-column: span 3; 
-    text-align: center;
-    color: #05176d;
-  }
-  
-  .card-container {
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-between; 
-    width: 100%; 
-  }
-  
-  .card {
-    border: 1px solid black;
-    border-radius: 15px 50px 30px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 20px; 
-    width: 300px;
-    height: 150px;
-    background-color: #bbdcde;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    margin: 10px;
-  }
-  
-  .card-title {
-    font-size: large;
-    text-align: center;
-    color: #05176d;
-  }
-  
-  .card-text {
-    font-size: small;
-    color: #05176d;
-    text-align: justify;
-  }
-   */
+.collapsible-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 70px; /* Add gap between columns */
+  justify-content: center;
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  margin: 100px;
+  margin-left: 200px;
+}
+
+
+.collapsible {
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 100%; /* Initial width for all items */
+  background-color: #58a8d7;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; /* Add margin to the bottom for gap */
+}
+
+/* .collapsible.active {
+  width: 150%; Adjust the width for the selected item
+} */
+
+.card-title {
+  font-size: large;
+  text-align: center;
+  color: #05176d;
+}
+
+.card-text {
+  font-size: small;
+  color: #05176d;
+  text-align: justify;
+  display: none;
+}
+
+.collapsible.active .card-text {
+  display: block;
+}
+
+.diamond-info-title{
+  text-align: center;
+  color: #05176d;
+}

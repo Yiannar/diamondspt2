@@ -60,8 +60,8 @@ const handleSubmit = (e)=>{
 
 return (
     <div className='form-container'>
-        <div className='title'><h2 >Enter a custom Diamond</h2></div>
-            <img src={Diamondlogo} class="image" />
+       <h2 className='title'>Enter a custom Diamond</h2>
+            <img src={Diamondlogo} class="form-img" />
             <Box
       component="form"
       sx={{

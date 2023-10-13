@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import Diamond from './Diamond';
+import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Diamonds.css'
 import axios from "axios";
 // import DiamondDetails from './DiamondDetails';
 
@@ -27,7 +28,7 @@ const Diamonds = ({cart, setCart}) => {
             <br/>
             <br/>
             <br/>
-            <h1>Select a diamond</h1>
+            <h1 className='titleh2'>Select a diamond</h1>
             <br/>
             <br/>
             <br/>
