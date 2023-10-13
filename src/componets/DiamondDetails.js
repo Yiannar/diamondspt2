@@ -10,6 +10,7 @@ const API = process.env.REACT_APP_API_URL
 function DiamondDetails(){
  
 const [diamond, setDiamond] = useState({})
+const [isDescriptionVisible, setIsDescriptionVisible]= useState(false)
 const { id } = useParams()
 let navigate = useNavigate()
 
@@ -52,64 +53,65 @@ useEffect(()=>{
 function getPriceInDecimal(diamond) {
     return (diamond[0].price / 100).toFixed(2);
   }
-  
 
 
 return(
     <>
     <article >
      {diamond[0]&&    
-     <div>
-            <h1 className="diamondShape">{diamond[0].shape}</h1>
-            <img className="diamond-pic" src={diamond[0].image} alt='diamondpic'/>
-            <table>
-               <tbody>
-                <h4>Details and Description</h4>
-                <tr>
-                    <td><h4>Carat:</h4></td>
-                    <td><h4>{diamond[0].carat}</h4></td>
-                </tr>
-                <tr>
-                <td><h4>Color:</h4></td>
-                    <td><h4>{diamond[0].color}</h4></td>
-                </tr>
-                <tr>
-                <td><h4>Clarity:</h4></td>
-                    <td><h4>{diamond[0].clarity}</h4></td>
-                </tr>
-                <tr>
-                <td><h4>Cut:</h4></td>
-                    <td><h4>{diamond[0].cut}</h4></td>
-                </tr>
-                <tr>
-                <td><h4>Price:</h4></td>
-                    <td><h4>${getPriceInDecimal(diamond)}</h4></td>
-                </tr>
-                <tr>
-                <td><h4>Reported:</h4></td>
-                    <td><h4>{(diamond[0].is_reported).toString()}</h4></td>
-                </tr>
-               
-                </tbody>
-            </table>
-            <div className="nav">
-                <div className="back">
-                <Link to={`/diamonds`}>
-                    <button>Back</button>
-                </Link>
-                </div>
-            </div>
-            <div className="edit">
-                <Link to={`/diamonds/${id}/edit`}>
-                    <button>Edit</button>
-                </Link>
-                <button className="delete" onClick={deleteDiamond}>Delete</button>
-                {/* <ReviewForm /> */}
+     <div className="diamond-details-container">
+            <h1 className="diamond-shape">{diamond[0].shape}</h1>
+            <img className="diamond-image" src={diamond[0].image} alt='diamondpic'/>
+            <button className="toggle-description-button"
+            onClick={()=> setIsDescriptionVisible(!isDescriptionVisible)}>
+              Diamond Details
+            </button>
+            {isDescriptionVisible &&(
+                <table className="details-table">
+                <tbody>
+                 <tr>
+                     <td><h4>Carat:</h4></td>
+                     <td><h4>{diamond[0].carat}</h4></td>
+                 </tr>
+                 <tr>
+                 <td><h4>Color:</h4></td>
+                     <td><h4>{diamond[0].color}</h4></td>
+                 </tr>
+                 <tr>
+                 <td><h4>Clarity:</h4></td>
+                     <td><h4>{diamond[0].clarity}</h4></td>
+                 </tr>
+                 <tr>
+                 <td><h4>Cut:</h4></td>
+                     <td><h4>{diamond[0].cut}</h4></td>
+                 </tr>
+                 <tr>
+                 <td><h4>Price:</h4></td>
+                     <td><h4>${getPriceInDecimal(diamond)}</h4></td>
+                 </tr>
+                 <tr>
+                 <td><h4>Reported:</h4></td>
+                     <td><h4>{(diamond[0].is_reported).toString()}</h4></td>
+                 </tr>
                 
-            </div>
+                 </tbody>
+             </table>
+            )}
+            
+
+            {/* <div className="action-buttons">
+                <Link to={`/diamonds`}>
+                    <button className="back-button"> Back</button>
+                </Link>
+                <Link to={`/diamonds/${id}/edit`}>
+                    <button className="edit-button">Edit</button>
+                </Link>
+                <button className="delete-button" onClick={deleteDiamond}>Delete</button>
+            </div> */}
+
         </div>}
     </article>
-    <Reviews/>
+    <Reviews className="reviews-section"/>
     </>
 )
 

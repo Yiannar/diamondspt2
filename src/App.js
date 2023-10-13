@@ -10,7 +10,6 @@ import Info from "./pages/Info";
 import Cart from "./componets/Cart";
 import Checkout from './componets/Checkout'
 import Footer from "./componets/Footer";
-import "./global.css"
 import { useState } from "react";
 import ContactUs from "./componets/ContactUs";
 import AboutDev from "./componets/AboutDev";

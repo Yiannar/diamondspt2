@@ -3,17 +3,14 @@ import axios from "axios"
 //import { useParams, useState, useEffect } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Diamond from '../componets/Diamond';
-import ImageSlideshow from '../componets/ImageSlideShow';
 import './HomePage.css'
 import DiamondsImage2 from '../../src/assets/DiamondsImage2.png';
 import DiamondsImage4 from '../../src/assets/DiamondsImage4.png';
-import HomeLanding2 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/HomeLanding2.mp4'
-import Home2 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home2.png'
-import Home3 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home3.png'
 import Home4 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home4.png'
-import Home5 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home5.png'
-import Home6 from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home6.png'
+import Home5transparent from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home5transparent.png'
+import Home2fixed from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Home2Fixed.png'
 import HomePageModal from '../componets/HomePageModal';
+import Video from '../componets/Video';
 
 
 
@@ -64,35 +61,31 @@ const HomePage = ({cart, setCart}) => {
 
     return (
         <div className='homepage-container' style={{ height: 'auto' }}>
+
+            {/* <div>
+                <p>Image goes here link to new product</p>
+            </div> */}
+            <div>
+
+               <Video className='video'/>
             <HomePageModal/>
 
-            <div>
-                <p>Image goes here link to new product</p>
-            </div>
-                <video src={HomeLanding2} autoPlay loop muted className='homeLanding' />
-        
-
-
-            {/* <Link to='/diamonds'>
-                <h1 className='title'>Welcome to the Diamonds App</h1>
-            </Link>  */}
-
-            {/* <ImageSlideshow images={images}/> */}
-
             
-            <h3>Shop by category</h3>
+            <h2 className='category'>Shop Now</h2>
             <ul>
                 {diamonds.map((diamond)=>(
-                   <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />
-                ))}
+                    <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />
+                    ))}
             </ul>
-            <div>
-            <img src={Home2} className='home2'/>
-            <img src={Home3} className='home3'/>
-            <img src={Home4} className='home4'/>
-            <img src={Home5} className='home5'/>
-            <img src={Home6} className='home6'/>
 
+            <div className='homeimg-container'>
+            {/* <img src={Home3} className='home-page-img'/> */}
+            <img src={Home2fixed} className='home-page-img'/>
+            <img src={Home4} className='home-page-img'/>
+            <img src={Home5transparent } className='home-page-promise-banner'/>
+            {/* <img src={Home6} className='home-page-img-bottom'/> */}
+
+            </div>
             </div>
         </div>
     );

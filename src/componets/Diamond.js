@@ -22,7 +22,7 @@ const Diamond =({diamond, setCart, cart})=>{
 
     return(
         <div className="diamonds">
-                            <Link to={`/diamonds/${diamond.id}`}>
+       <Link to={`/diamonds/${diamond.id}`}>
   <div className="shape">
     <h1>{diamond.shape}</h1>
     <img className="diamondimg" src={diamond.image} alt="diamonds"></img>

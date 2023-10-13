@@ -22,3 +22,11 @@ const ImageSlideshow = ({ images }) => {
 };
 
 export default ImageSlideshow;
+
+
+
+   {/* <Link to='/diamonds'>
+                <h1 className='title'>Welcome to the Diamonds App</h1>
+            </Link>  */}
+
+            {/* <ImageSlideshow images={images}/> */}

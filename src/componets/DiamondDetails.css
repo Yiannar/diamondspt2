@@ -1,10 +1,77 @@
-.diamondShape{
-    text-align: center;
+/* DiamondDetails.css */
+
+.diamond-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+  width: 100%;
+  margin-top: 20px;
 }
 
-.diamond-pic{
-    width: 25%;
-    height: 25%;
+.diamond-shape {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
- 
+.diamond-image {
+  max-width: 300px;
+  height: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.details-table {
+  border-collapse: collapse;
+  width: 30%;
+  margin-top: 20px;
+}
+
+table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.toggle-description-button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto; /* Push the button to the right */
+}
+
+/* Additional styles for buttons and other elements can be added as needed */
+
+/* Style for action buttons */
+.action-buttons {
+  margin-top: 20px;
+}
+
+/* Style for the "Back" button */
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Style for the "Edit" and "Delete" buttons */
+/* .edit-button,
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+} */
+
+/* Style for reviews section (you can add more styles as needed) */
+/* .reviews-section {
+  margin-top: 20px;
+} */

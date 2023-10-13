@@ -11,14 +11,14 @@ const Footer = () => {
     }
 
     const handleSubmit = (e) =>{
-        e.preventdefault()
+        e.preventDefault()
     }
 
  
   return (
     
       <footer>
-        <div className='container'>
+        <div className='footer-container'>
           {/* About Company */}
           <div className='column'>
             <h5 className='underline'>About company</h5>

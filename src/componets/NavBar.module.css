@@ -2,6 +2,8 @@
 
 /* Existing styles for the navbar */
 .nav {
+    position: sticky;
+    top: 0;
     background-color: white;
     /* color: #333; */
     display: flex;
@@ -9,7 +11,15 @@
     align-items: center;
     color: #58a8d7;
    border-bottom: 2px solid black;
+   z-index:1;
     /* padding: 10px 20px; */
+  }
+
+  .navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
   .nav li:hover{
@@ -37,7 +47,7 @@
     padding: 0;
   }
   
-  .a{
+  a {
     text-decoration: none;
   }
   

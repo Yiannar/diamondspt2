@@ -1,17 +1,22 @@
-*{
+/* *{
   box-sizing: border-box;
-}
+} */
 
-body{
+
+
+/* body{
   margin: 0;
-}
-.App {
+} */
+/* .App {
   text-align: center;
-}
+} */
 /* .a.visited{
   color: blue;
 } */
-
+/* 
+* a {
+  list-style: none;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -25,7 +30,7 @@ body{
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

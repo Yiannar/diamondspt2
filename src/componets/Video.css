@@ -1,0 +1,16 @@
+/* Add this CSS for the video and its container */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Full width of the viewport */
+    height: 700px; /* Fixed height */
+  }
+  
+  video {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+  
+  /* Additional styling for the rest of the page can remain as is */
+  
