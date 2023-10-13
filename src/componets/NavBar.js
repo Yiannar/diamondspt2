@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import Diamondlogo from '../../src/assets/Diamondlogo.png'
@@ -7,25 +7,27 @@ const NavBar = () => {
   const [isSticky, setIsSticky] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        console.log('Adding sticky class');
+    function handleScroll() {
+      if (window.scrollY >= 392) {
+        console.log('Changing color - Scroll position:', window.scrollY);
         setIsSticky(true);
       } else {
-        console.log('Removing sticky class');
+        console.log('Reverting color - Scroll position:', window.scrollY);
         setIsSticky(false);
       }
     }
-  
+
+    // Add the scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);
-  
+
+    // Remove the scroll event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    }
+    };
   }, []);
   
   return (
-    <div className={`navbar ${isSticky ? 'sticky' : ''}`}> 
+    <div className={ `${styles.nav} ${isSticky ? styles.sticky : ''}`}> 
     <nav className={styles.nav}>
       <Link to="/" className={styles.diamondSite}>
         <img src={Diamondlogo} alt='Diamondlogo'/>

@@ -10,17 +10,24 @@
     justify-content: space-around;
     align-items: center;
     color: #58a8d7;
-   border-bottom: 2px solid black;
+   /* border-bottom: 2px solid black; */
    z-index:1;
     /* padding: 10px 20px; */
   }
 
   .navbar.sticky {
+    background-color: pink;
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    transition: 3s ease-in-out;
   }
+
+  .navbar.sticky li {
+    background-color: black;
+  }
+
 
   .nav li:hover{
     text-decoration: underline;
