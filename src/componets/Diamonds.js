@@ -1,44 +1,64 @@
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Diamond from './Diamond';
-import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Diamonds.css'
+import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Diamonds.css';
 import axios from "axios";
-// import DiamondDetails from './DiamondDetails';
+// import CartIcon from './CartIcon';
 
 const API = process.env.REACT_APP_API_URL;
 
-const Diamonds = ({cart, setCart}) => {
-    const [diamonds, setDiamonds] = useState([]);
+const Diamonds = () => {
+  const [diamonds, setDiamonds] = useState([]);
+  const [cart, setCart] = useState([])
+  const [cartCount, setCartCount] = useState(0);
 
+  const addToCart = (diamond) => {
+    const itemIndex = cart.findIndex((item) => item.id === diamond.id);
+  
+    if (itemIndex === -1) {
+      // If the item is not in the cart, add it with a quantity of 1
+      setCart([...cart, { ...diamond, quantity: 1 }]);
+    } else {
+      // If the item is in the cart, update its quantity
+      const updatedCart = cart.map((item, index) =>
+        index === itemIndex ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart(updatedCart);
+    }
+  
+    // Update the cart count
+    setCartCount(cartCount + 1);
+  };
+  
 
-    useEffect(() => {
-        axios
-        .get(`${API}/diamonds`)
-        .then((res)=>{
-            // console.log(res.data)
-            setDiamonds(res.data);
-        })
-        .catch((c) => console.warn("catch", c))
-    }, [])
+  useEffect(() => {
+    axios
+      .get(`${API}/diamonds`)
+      .then((res) => {
+        setDiamonds(res.data);
+      })
+      .catch((c) => console.warn("catch", c));
+  }, []);
 
-    console.log("Type of diamonds:", typeof diamonds)
+  return (
+    <div className='shop'>
+      <br/>
+      <br/>
+      <br/>
+      <h2 className='shopTitle'>Select a diamond</h2>
+      <br/>
+      <br/>
+      <br/>
 
-    return (
-        <div className='diamonds'>
-            <br/>
-            <br/>
-            <br/>
-            <h1 className='titleh2'>Select a diamond</h1>
-            <br/>
-            <br/>
-            <br/>
-
-            {diamonds.map((diamond) => {
-                return ( <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />)
-               
-            })}
-        </div>
-    );
+      {diamonds.map((diamond) => {
+        return (
+          <Diamond
+            key={diamond.id}
+            diamond={diamond}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default Diamonds;

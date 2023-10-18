@@ -21,7 +21,7 @@ const HomePageModal = () => {
                 <DialogContent>
                     <DialogContentText>Get 10% off & A birthday treat</DialogContentText>
                     <DialogContentText>When you signup for our email & text list</DialogContentText>
-                    <img src={DiamondsImage2} style={{float:'left', marginRight: "15px", width: 500, height: 450}} ></img>
+                    <img src={DiamondsImage2} style={{float:'left', marginRight: "15px", width: 400, height: 200}} ></img>
                     <Stack spacing={2} margin={2}>
                         <TextField  id="outlined-required" variant='outlined' label="Username" size="small"></TextField>
                         <TextField  id="outlined-required" variant='outlined' label="Password" size="small"></TextField>

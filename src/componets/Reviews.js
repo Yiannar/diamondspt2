@@ -1,74 +1,71 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Review from "./Review";
-// import ReviewForm from "./ReviewForm";
-
+import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Reviews.css'
 
 const API = process.env.REACT_APP_API_URL;
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
+  const [showReviews, setShowReviews] = useState(false);
   let { id } = useParams();
+  let navigate = useNavigate();
 
-
-const handleAdd = (newReview) => {
-    axios
-      .post(`${API}/diamonds/${id}/reviews`, newReview)
-      .then(
-        (response) => {
-          setReviews([response.data, ...reviews]);
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn("catch", c));
+  const handleToggleReviews = () => {
+    setShowReviews(!showReviews);
   };
-  const handleDelete = (id) => {
+
+  useEffect(() => {
+    // Fetch the reviews data when the component mounts
+    axios.get(`${API}/diamonds/${id}/reviews`).then((response) => {
+      setReviews(response.data);
+    });
+  }, [id]);
+
+  const handleDelete = (reviewId) => {
+    // Delete the review with the given reviewId
     axios
-      .delete(`${API}/diamonds/${id}/reviews/${id}`)
-      .then(
-        (response) => {
-          const copyReviewArray = [...reviews];
-          const indexDeletedReview = copyReviewArray.findIndex((review) => {
-            return review.id === id;
-          });
-          copyReviewArray.splice(indexDeletedReview, 1);
-          setReviews(copyReviewArray);
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn("catch", c));
+      .delete(`${API}/reviews/${reviewId}`)
+      .then(() => {
+        // Remove the deleted review from the reviews state
+        const updatedReviews = reviews.filter((review) => review.id !== reviewId);
+        setReviews(updatedReviews);
+      })
+      .catch((c) => console.warn('catch', c));
   };
 
   const handleEdit = (updatedReview) => {
-    axios
-      .put(`${API}/diamonds/${id}/reviews/${updatedReview.id}`, updatedReview)
-      .then((response) => {
-        const copyReviewArray = [...reviews];
-        const indexUpdatedReview = copyReviewArray.findIndex((review) => {
-          return review.id === updatedReview.id;
-        });
-        copyReviewArray[indexUpdatedReview] = response.data;
-        setReviews(copyReviewArray);
-      })
-      .catch((c) => console.warn("catch", c));
-  };
-  useEffect(() => {
-    axios.get(`${API}/diamonds/${id}/reviews`).then((response) => {
-      // console.log(response.data);
-      setReviews(response.data);
+    // You should update the existing review with updatedReview, not fetch new data
+    const updatedReviews = reviews.map((review) => {
+      if (review.id === updatedReview.id) {
+        return updatedReview;
+      }
+      return review;
     });
-  }, [id, API]);
+
+    setReviews(updatedReviews);
+  };
+
   return (
     <section className="Reviews">
-      <h2>Reviews</h2>
-      {reviews.map((review) => (
-        <Review 
-        key={review.id} 
-        review={review}
-         handleDelete={handleDelete}  
-         handleSubmit={handleEdit} />
-      ))}
+      <h2 className="title">
+        Reviews{" "}
+        <button onClick={handleToggleReviews}>
+          {showReviews ? "Hide" : "Show"} Reviews
+        </button>
+      </h2>
+
+      {showReviews && reviews.length > 0 ? (
+        reviews.map((review) => (
+          <Review
+            key={review.id}
+            review={review}
+            handleDelete={handleDelete}
+            handleSubmit={handleEdit}
+          />
+        ))
+      ) : null}
     </section>
   );
 }

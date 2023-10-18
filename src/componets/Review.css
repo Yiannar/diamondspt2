@@ -1,0 +1,13 @@
+.Review{
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.reviewer{
+    text-align: left;
+}
+
+.subject{
+    text-decoration: none;
+}

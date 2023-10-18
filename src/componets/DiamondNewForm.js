@@ -61,7 +61,7 @@ const handleSubmit = (e)=>{
 return (
     <div className='form-container'>
        <h2 className='title'>Enter a custom Diamond</h2>
-            <img src={Diamondlogo} class="form-img" />
+            <img src={Diamondlogo} className="form-img" />
             <Box
       component="form"
       sx={{
@@ -76,7 +76,8 @@ return (
       variant="outlined" 
       value={diamond.shape} 
       onChange={handleTextChange}
-      size="small" />
+      size="small"
+       />
 
       <TextField 
       id="outlined-required" 

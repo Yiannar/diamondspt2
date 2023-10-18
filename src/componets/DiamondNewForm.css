@@ -1,13 +1,13 @@
 .form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #58a8d7; /* Light grey background color */
-  padding: 20px;
-  text-align: left; /* Set the text alignment to left */
-}
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #58a8d7; /* Light grey background color */
+    padding: 20px;
+    text-align: center;
+  }
+  
   .form-img{
     width: 500px;
     height: 500px;
@@ -32,6 +32,7 @@
     margin-bottom: 40px; /* Adjust the margin as needed */
     /* padding: 10px; Adjust the padding as needed */
     text-align: center;
+    background-color: white;
   }
   
   /* Additional styles for form elements if needed */

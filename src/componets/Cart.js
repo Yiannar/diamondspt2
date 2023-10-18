@@ -1,29 +1,50 @@
-import React from "react";
-import { useState } from "react";
-import Diamond from './Diamonds'
+import React, { useContext } from "react";
+import { ShopContext } from "../context/diamond-context";
+import CartItem from "./CartItem";
+import { useNavigate } from "react-router-dom";
 
 
-function Cart({cart}) {
 
-let total = cart.reduce((acc, currentValue)=> acc + currentValue.amount, 0)
 
-    return (
-        <div>
-            <h1 className="Cart">Cart</h1>
-            <h4>Total:${cart.length >3 ? (0.90 * total): total}</h4>
-            <h6>Discount:{cart.length < 3 ? (0): (10)}%</h6>
-            {
-                cart.map((diamond)=>{
-                    return (
-                        <ul>
-                            <li>{diamond.shape}:{diamond.price}</li>
-                        </ul>
-                    )
-                })
-            }
-            <h6>Your purchase has qualified you for the following items:</h6>
+function Cart({diamonds}) {
+  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
+  const totalAmount = getTotalCartAmount();
+
+  const navigate = useNavigate()
+
+  return (
+    <div className="Cart">
+        <h1> Shopping Cart</h1>
+
+      <div className="cartItems">
+
+      {diamonds.map((diamond) => {
+          if (cartItems[diamond.id] !== 0) {
+            return <CartItem key={diamond.id} diamond={diamond} />;
+          }
+        })}
+      </div>
+     
+      {totalAmount > 0 ? (
+        <div className="checkout">
+          <p> Subtotal: ${totalAmount} </p>
+          <button onClick={() => navigate("/")}> Continue Shopping </button>
+          <button
+            onClick={() => {
+              checkout();
+              navigate("/checkout");
+            }}
+          >
+            {" "}
+            Checkout{" "}
+          </button>
         </div>
-    );
+      ) : (
+        <h1> Your Shopping Cart is Empty</h1>
+      )}
+
+    </div>
+  );
 }
 
 export default Cart;
