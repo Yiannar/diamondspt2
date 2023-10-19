@@ -16,6 +16,7 @@ import AboutDev from "./componets/AboutDev";
 import Banner from "./componets/Banner";
 import axios from "axios";
 import {ShopContextProvider} from './context/diamond-context'
+import ErrorBoundary from './ErrorBoundary';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -36,7 +37,8 @@ function App() {
 
   return (
     <div className="App">
-      <ShopContextProvider>
+      <ErrorBoundary>
+      <ShopContextProvider diamonds={diamonds}>
       <Router>
         <Banner/>
         <NavBar />
@@ -47,7 +49,7 @@ function App() {
           <Route path="/diamonds/:id" element={<Show cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/:id/edit" element={<Edit />} />
           {/* <Route path="/diamonds/Info" element={<Info/>}/> */}
-          <Route path="/diamonds/cart" element={<Cart cart={cart} setCart={setCart} diamonds={diamonds} />} />
+          <Route path="/diamonds/cart" element={<Cart cart={cart} setCart={setCart} diamonds={diamonds} setDiamonds={setDiamonds}/>}/>
           <Route path="/diamonds/checkout" element={<Checkout cart={cart} setCart={setCart}/>}/>
           <Route path="/diamonds/contactus" element={<ContactUs />}/> 
           <Route path="/diamonds/AboutDev" element={<AboutDev/>}/>
@@ -56,6 +58,7 @@ function App() {
           <Footer/>
       </Router>
       </ShopContextProvider>
+      </ErrorBoundary>
     </div>
   );
 }

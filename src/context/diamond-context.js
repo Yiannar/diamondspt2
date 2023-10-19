@@ -1,51 +1,78 @@
 import React, { createContext, useState } from 'react';
-import Diamonds from '../componets/Diamonds';
 
-export const ShopContext = createContext(null)
+export const ShopContext = createContext(null);
 
-const getDefaultCart = () =>{
-    let cart = {}
-    for(let i =1; i < Diamonds.length + 1; i++){
-        cart[i] = 0
-    }
-    return cart
-}
-
-export const ShopContextProvider = (props) => {
-
-    const [cartItems, setCartItems] = useState(getDefaultCart())
-
-    const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for (const item in cartItems) {
-          if (cartItems[item] > 0) {
-            let itemInfo = Diamonds.find((diamond) => diamond.id === Number(item));
-            totalAmount += cartItems[item] * itemInfo.price;
-          }
-        }
-        return totalAmount;
+const getDefaultCart = (diamonds) => {
+  let cart = {};
+  if (Array.isArray(diamonds)) {
+    diamonds.forEach((diamond) => {
+      cart[diamond.id] = {
+        quantity: 0,
+        price: diamond.price,
       };
-
-    const addToCart = (itemId) =>{
-
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 }))
-    }
-
-    const removeFromCart = (itemId) =>{
-
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 }))
-    }
-
-    const updateCartItemCount = (newAmount, itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
-      };
-
-      const checkout = () => {
-        setCartItems(getDefaultCart());
-      };
-
-    const contextValue = {cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, checkout}
-
-    return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
+    });
+  }
+  return cart;
 };
 
+export const ShopContextProvider = (props) => {
+  const { diamonds } = props;
+
+  const [cartItems, setCartItems] = useState(getDefaultCart(diamonds));
+
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const itemId in cartItems) {
+      if (cartItems[itemId].quantity > 0) {
+        totalAmount += cartItems[itemId].quantity * cartItems[itemId].price;
+      }
+    }
+    return totalAmount;
+  };
+
+  const addToCart = (itemId) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: {
+        ...prev[itemId],
+        quantity: (prev[itemId]?.quantity || 0)+ 1,
+      },
+    }));
+  };
+
+  const removeFromCart = (itemId) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: {
+        ...prev[itemId],
+        quantity: prev[itemId].quantity - 1,
+      },
+    }));
+  };
+
+  const updateCartItemCount = (newAmount, itemId) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: {
+        ...prev[itemId],
+        quantity: newAmount,
+      },
+    }));
+  };
+
+  const checkout = () => {
+    setCartItems(getDefaultCart(diamonds));
+  };
+
+  const contextValue = {
+    cartItems,
+    addToCart,
+    removeFromCart,
+    updateCartItemCount,
+    getTotalCartAmount,
+    checkout,
+    diamonds,
+  };
+
+  return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
+};
