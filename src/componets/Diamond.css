@@ -1,14 +1,15 @@
 /* Diamond.css */
 
 
-.diamonds-list-container {
+/* .diamonds-list-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 20px; /* Add grid gap for spacing between diamonds */
+  grid-template-columns: 1fr 200px;
+  grid-gap: 20px; 
   background-color: white;
-  padding: 20px; /* Add some padding for spacing */
+  padding: 20px; 
   margin-left: 20px;
-}
+} */
+
 
 .shape {
   border: 1px solid black;

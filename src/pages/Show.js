@@ -3,7 +3,7 @@ import DiamondDetails from '../componets/DiamondDetails';
 
 const Show = () => {
     return (
-        <div>
+        <div className='diamond-details'>
             <DiamondDetails />
             
         </div>
