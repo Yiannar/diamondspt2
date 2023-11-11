@@ -2,8 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Review from "./Review";
-import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Reviews.css'
-
+import '../componets/Reviews.css'
 const API = process.env.REACT_APP_API_URL;
 
 function Reviews() {
@@ -18,7 +17,9 @@ function Reviews() {
 
   useEffect(() => {
     // Fetch the reviews data when the component mounts
-    axios.get(`${API}/diamonds/${id}/reviews`).then((response) => {
+    axios
+    .get(`${API}/diamonds/${id}/reviews`)
+    .then((response) => {
       setReviews(response.data);
     });
   }, [id]);

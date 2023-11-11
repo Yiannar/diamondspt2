@@ -1,49 +1,49 @@
-.collapsible-container {
+/* .collapsible-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-gap: 70px; /* Add gap between columns */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 70px; 
   justify-content: center;
-  max-width: 1000px; /* Adjust the maximum width as needed */
+  max-width: 1000px; 
   margin: 100px;
   margin-left: 200px;
-}
+} */
 
 
-.collapsible {
+/* .collapsible {
   border: 1px solid black;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  width: 100%; /* Initial width for all items */
+  width: 100%; 
   background-color: #58a8d7;
   cursor: pointer;
   transition: background-color 0.3s;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px; /* Add margin to the bottom for gap */
-}
+  margin-bottom: 10px; 
+} */
 
 /* .collapsible.active {
   width: 150%; Adjust the width for the selected item
 } */
 
-.card-title {
+/* .card-title {
   font-size: large;
   text-align: center;
   color: #05176d;
-}
+} */
 
-.card-text {
+/* .card-text {
   font-size: small;
   color: #05176d;
   text-align: justify;
   display: none;
-}
+} */
 
-.collapsible.active .card-text {
+/* .collapsible.active .card-text {
   display: block;
-}
+} */
 
-.diamond-info-title{
+/* .diamond-info-title{
   text-align: center;
   color: #05176d;
-}
+} */

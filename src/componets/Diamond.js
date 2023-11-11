@@ -8,19 +8,16 @@ function Diamond({ diamond }) {
   const {addToCart, cartItems} = useContext(ShopContext)
 
 
-  function getPriceInDecimal(price) {
-    return (price / 100).toFixed(2)
-  }
 
   const cartItemCount = cartItems[id]
 
   return (
-    <div className="diamonds">
+    <div className="diamonds-list-container">
       <Link to={`/diamonds/${diamond.id}`}>
         <div className="shape">
           <h1>{shape}</h1>
           <img className="diamondimg" src={image} alt="diamonds" />
-          <h4>Price: ${getPriceInDecimal(price)}</h4>
+          <h4>Price: ${diamond.price}</h4>
           <button className="addToCartBttn" onClick={() => addToCart(id)}>
             Add to Cart {cartItemCount > 0 && <>({cartItemCount})</>}
           </button>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
-import Diamondlogo from '../../src/assets/Diamondlogo.png'
+// import Diamondlogo from '../../src/assets/Diamondlogo.png'
+import DiamondsLogo from '../assets/DiamondsLogo.png'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 
 const NavBar = () => {
@@ -31,12 +32,12 @@ const NavBar = () => {
     <div className={ `${styles.nav} ${isSticky ? styles.sticky : ''}`}> 
     <nav className={styles.nav}>
       <Link to="/" className={styles.diamondSite}>
-        <img src={Diamondlogo} alt='Diamondlogo'/>
+        <img src={DiamondsLogo} alt='Diamondlogo'/>
         </Link> 
       <ul className={styles.navUL}>
         {/* <li><Link to='/diamonds/Info' className={styles.info}>Info</Link></li> */}
         <li><Link to='/diamonds'>Diamonds</Link> </li>
-        {/* <li><Link to="/diamonds/new" className={styles.newDiamond}>Custom Diamond</Link> </li> */}
+        <li><Link to="/diamonds/new" className={styles.newDiamond}>Custom Diamond</Link> </li>
         <li><Link to='/diamonds/cart' className={styles.cart}> <AddShoppingCartOutlinedIcon size ={32}/></Link>
       </li>
        

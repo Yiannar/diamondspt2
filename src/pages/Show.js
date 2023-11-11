@@ -1,5 +1,5 @@
 import React from 'react';
-import DiamondDetails from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/DiamondDetails.js';
+import DiamondDetails from '../componets/DiamondDetails';
 
 const Show = () => {
     return (

@@ -61,9 +61,10 @@ return(
      {diamond[0]&&    
      <div className="diamond-details-container">
             <h1 className="diamond-shape">{diamond[0].shape}</h1>
+            <h2>Price: {diamond[0].price}</h2>
             <img className="diamond-image" src={diamond[0].image} alt='diamondpic'/>
-            <button>Contact Us</button>
             <button>Add to Cart </button>
+            <button>Contact Us</button>
             <button className="toggle-description-button"
             onClick={()=> setIsDescriptionVisible(!isDescriptionVisible)}>
               Diamond Details

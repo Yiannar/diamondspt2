@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 export const ShopContext = createContext(null);
 
 const getDefaultCart = (diamonds) => {
@@ -19,15 +19,29 @@ export const ShopContextProvider = (props) => {
   const { diamonds } = props;
 
   const [cartItems, setCartItems] = useState(getDefaultCart(diamonds));
+  const [totalAmount, setTotalAmount] = useState(0); // New state for totalAmount
+  const [diamondsData, setDiamonds] = useState([]);
+  const API = process.env.REACT_APP_API_URL;
+
+  useEffect(() => {
+    axios
+    .get(`${API}/diamonds`).then((res) => {
+      setDiamonds(res.data);
+      if (Object.keys(cartItems).length === 0) {
+        setCartItems(getDefaultCart(res.data));
+      }
+    });
+  }, []);
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
+    let newTotalAmount = 0;
     for (const itemId in cartItems) {
       if (cartItems[itemId].quantity > 0) {
-        totalAmount += cartItems[itemId].quantity * cartItems[itemId].price;
+        newTotalAmount += cartItems[itemId].quantity * cartItems[itemId].price;
       }
     }
-    return totalAmount;
+    setTotalAmount(newTotalAmount); // Update the total amount state
+    return newTotalAmount;
   };
 
   const addToCart = (itemId) => {
@@ -35,7 +49,7 @@ export const ShopContextProvider = (props) => {
       ...prev,
       [itemId]: {
         ...prev[itemId],
-        quantity: (prev[itemId]?.quantity || 0)+ 1,
+        quantity: (prev[itemId]?.quantity || 0) + 1,
       },
     }));
   };
@@ -70,6 +84,7 @@ export const ShopContextProvider = (props) => {
     removeFromCart,
     updateCartItemCount,
     getTotalCartAmount,
+    totalAmount, // Include the totalAmount in the context value
     checkout,
     diamonds,
   };

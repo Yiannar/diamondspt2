@@ -51,14 +51,14 @@ const Banner = () => {
                 <button onClick={handleNext}>Next</button>
             </div>
             <div className="banner-navigation">
-                <a href="/about-us">About Us</a>
+                {/* <a href="/about-us">About Us</a>
                 <select onChange={handleLanguageChange}>
                     {languageOptions.map(option => (
                         <option key={option.value} value={option.value}>
                             {option.label}
                         </option>
                     ))}
-                </select>
+                </select> */}
             </div>
         </div>
     );

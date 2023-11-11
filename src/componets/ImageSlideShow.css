@@ -1,26 +1,25 @@
-/* Updated CSS to center the image */
+/* 
 img {
     display: block;
     width: 80%;
     height: 25%;
-    margin: auto; /* Center horizontally */
-    max-width: 100%; /*Ensure the image doesn't overflow its container*/
-    max-height: 100%; /*Ensure the image doesn't overflow its container */
+    margin: auto; 
+    max-width: 100%; 
+    max-height: 100%; 
     border-radius: 15px 50px 30px;
     object-fit: cover;
     transition: opacity 0.5s;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
   
-  /* Center the image vertically by using a parent container */
   .slideshow-container {
-    display: flex; /* Use flexbox for vertical centering */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    width: 300px; /* Adjust the desired width */
-    height: 200px; /* Adjust the desired height */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 300px; 
+    height: 200px; 
     overflow: hidden;
     position: relative;
     
   }
-  
+   */

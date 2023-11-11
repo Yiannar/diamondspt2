@@ -27,9 +27,9 @@ function App() {
   const [diamonds, setDiamonds] = useState([])
 
   useEffect(() => {
-    // Replace this with your actual API call to fetch diamond data
-    // This is a placeholder example for fetching data from an API
-    axios.get(`${API}/diamonds`).then((res) => {
+    axios
+    .get(`${API}/diamonds`)
+    .then((res) => {
       setDiamonds(res.data);
     });
   }, []);
@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <ErrorBoundary>
-      <ShopContextProvider diamonds={diamonds}>
+      <ShopContextProvider diamonds={diamonds} setDiamonds={setDiamonds}>
       <Router>
         <Banner/>
         <NavBar />
@@ -52,7 +52,7 @@ function App() {
           <Route path="/diamonds/cart" element={<Cart cart={cart} setCart={setCart} diamonds={diamonds} setDiamonds={setDiamonds}/>}/>
           <Route path="/diamonds/checkout" element={<Checkout cart={cart} setCart={setCart}/>}/>
           <Route path="/diamonds/contactus" element={<ContactUs />}/> 
-          <Route path="/diamonds/AboutDev" element={<AboutDev/>}/>
+          {/* <Route path="/diamonds/AboutDev" element={<AboutDev/>}/> */}
           <Route path="*" element={<FourOFour />} />
         </Routes>
           <Footer/>

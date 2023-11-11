@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Diamond from './Diamond';
-import '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/componets/Diamonds.css';
+import './Diamonds.css';
 import axios from "axios";
 // import CartIcon from './CartIcon';
 
