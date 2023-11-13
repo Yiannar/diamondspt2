@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import'./DiamondNewForm.css'
-import Diamondlogo from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamondspt2/src/assets/Diamondlogo.png'
+import DiamondsLogo from '../assets/DiamondsLogo.png'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -61,7 +61,7 @@ const handleSubmit = (e)=>{
 return (
     <div className='form-container'>
        <h2 className='title'>Enter a custom Diamond</h2>
-            <img src={Diamondlogo} className="form-img" />
+            <img src={DiamondsLogo} className="form-img" />
            <div className='form-content'> 
             <Box
       component="form"
