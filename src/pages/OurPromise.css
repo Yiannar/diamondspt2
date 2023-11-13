@@ -1,0 +1,31 @@
+/* OurPromise.css */
+
+.ourPromiseContainer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+  }
+  
+  .promiseTitle {
+    color: #05176d;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .iconWithText {
+    display: inline-block;
+    margin: 0 20px; /* Adjust the margin as needed */
+  }
+  
+  .icon {
+    font-size: 150px; /* Increase the font size */
+    color: #05176d;
+  }
+  
+  .text {
+    margin-top: 10px;
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+  }
+  
