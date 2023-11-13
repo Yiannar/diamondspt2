@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import Reviews from ".//Reviews"
 import './DiamondDetails.css'
+import ContactUsButton from "./ContactUsButton"
 // import ReviewForm from './ReviewForm'
 
 const API = process.env.REACT_APP_API_URL
@@ -64,7 +65,7 @@ return(
             <h2>Price: {diamond[0].price}</h2>
             <img className="diamond-image" src={diamond[0].image} alt='diamondpic'/>
             <button>Add to Cart </button>
-            <button>Contact Us</button>
+            <ContactUsButton/>
             <button className="toggle-description-button"
             onClick={()=> setIsDescriptionVisible(!isDescriptionVisible)}>
               Diamond Details

@@ -2,71 +2,42 @@
 
 /* Existing styles for the navbar */
 .nav {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    /* color: #333; */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #58a8d7;
-   /* border-bottom: 2px solid black; */
-   z-index:1;
-    /* padding: 10px 20px; */
-    height: 50px;
-  }
+  position: sticky;
+  top: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #58a8d7;
+  z-index: 1;
+  height: 70px;
+  transition: background-color 0.3s ease-in-out;
+}
 
-  .navbar.sticky {
-    /* background-color: pink; */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
-    transition: 3s ease-in-out;
-  }
+.sticky {
+  background-color: aliceblue;
+}
 
-  /* .navbar.sticky li {
-    background-color: black;
-  } */
+.navUL {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  margin: 0; 
+  padding: 0; 
+  justify-content: center; 
+}
 
+.nav a {
+  color: #58a8d7;
+  text-decoration: none;
+}
 
-  .nav li:hover{
-    text-decoration: underline;
-  }
+.logo img {
+  width: 12rem;
+}
 
-  .nav a {
-    color: #58a8d7;
-  }
+.nav li:hover {
+  text-decoration: none;
+}
 
-  .nav img {
-    /* width: 50%;
-    height: 20%; */
-    width: 5rem;
-    height: 5rem;
-    /* border-radius: 50%; */
-    /* float: left; */
-  }
-  
-  
-  .navUL {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navLI {
-    padding: 0;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  /* .navLI:hover {
-    background-color: black;
-  } */
-  
-  /* .navLink:visited {
-    color: #333;
-  } */
-  
+/* AddShoppingCartOutlinedIcon styles can be added as needed */

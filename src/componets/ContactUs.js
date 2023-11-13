@@ -40,7 +40,13 @@ const handleSubmit = (e)=>{
                 onChange={handleTextChange}
                 placeholder='Janedoe@gmail.com'
                 required/>
-               
+                <label>Message Us</label>
+               <input
+               id='message'
+               type='text'
+               value={userInput}
+               onChange={handleTextChange}
+               placeholder='Your Message Here'/>
                 <br/>
                 <button className='submit' type='submit'>Submit</button>
             </form>

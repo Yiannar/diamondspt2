@@ -1,14 +1,12 @@
 /* Diamond.css */
 
+a {
+  text-decoration: none;
+}
 
-/* .diamonds-list-container {
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  grid-gap: 20px; 
-  background-color: white;
-  padding: 20px; 
-  margin-left: 20px;
-} */
+.diamonds-list-container {
+text-decoration: none;
+}
 
 
 .shape {

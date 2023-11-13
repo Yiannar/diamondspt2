@@ -12,6 +12,8 @@ import Home2fixed from '/Users/yianna/Documents/9.1-2/diamondsProjectPart2/diamo
 import HomePageModal from '../componets/HomePageModal';
 import Video from '../componets/Video';
 import OurPromise from './OurPromise';
+import Home2transparent from '../assets/Home2transparent.png'
+import MissionStatement from './MissionStatement';
 
 
 
@@ -71,7 +73,7 @@ const HomePage = ({cart, setCart}) => {
                <Video className='video'/>
             <HomePageModal/>
 
-            
+            <MissionStatement/>
             <h2 className='category'>Shop Now</h2>
             <ul>
                 {diamonds.map((diamond)=>(
@@ -81,12 +83,10 @@ const HomePage = ({cart, setCart}) => {
 
             <div className='homeimg-container'>
             {/* <img src={Home3} className='home-page-img'/> */}
-            <img src={Home2fixed} className='home-page-img'/>
-            <img src={Home4} className='home-page-img'/>
+            {/* <img src={Home2fixed} className='home-page-img'/> */}
+            {/* <img src={Home2transparent} className='homePageMission'/> */}
+            {/* <img src={Home4} className='home-page-img'/> */}
            <OurPromise></OurPromise>
-            {/* <img src={Home5transparent } className='home-page-promise-banner'/> */}
-            {/* <img src={Home6} className='home-page-img-bottom'/> */}
-
             </div>
             </div>
         </div>
