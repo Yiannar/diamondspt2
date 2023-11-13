@@ -62,6 +62,7 @@ return (
     <div className='form-container'>
        <h2 className='title'>Enter a custom Diamond</h2>
             <img src={Diamondlogo} className="form-img" />
+           <div className='form-content'> 
             <Box
       component="form"
       sx={{
@@ -123,7 +124,7 @@ return (
           }}
           />
     </Box>
-   
+    </div>
     </div>
 )
 }

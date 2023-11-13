@@ -17,6 +17,7 @@ import MissionStatement from './MissionStatement';
 
 
 
+
 const API = process.env.REACT_APP_API_URL
 
 const HomePage = ({cart, setCart}) => {

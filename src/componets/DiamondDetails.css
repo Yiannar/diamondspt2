@@ -14,15 +14,16 @@
   font-weight: bold;
   margin-top: 20px;
   float: right;
+  
 }
 
 .diamond-image {
   max-width: 300px;
   height: auto;
-  margin-right: 20px;
+  margin-left: 0; /* Move the image to the left */
   margin-bottom: 20px;
+  
 }
-
 .details-table {
   border-collapse: collapse;
   width: 30%;

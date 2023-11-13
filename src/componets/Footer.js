@@ -2,6 +2,8 @@ import { useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import InfoPage from '../pages/InfoPage';
+import Info from '../pages/Info';
 
 const Footer = () => {
     const [userInput, setUserInput] = useState([])
@@ -28,6 +30,7 @@ const Footer = () => {
             <p>
               * Disclaimer: You cannot purchase anything; this is for demonstration purposes only.*
             </p>
+            <Link to={Info}> Diamond Information</Link>
             <div>
               {/* Social icons */}
               {/* ... */}

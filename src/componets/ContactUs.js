@@ -1,57 +1,78 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const ContactUs = () => {
-    const [userInput, setUserInput]= useState("")
- //console.log(userInput)
+  const [formData, setFormData] = useState({
+    fName: '',
+    lName: '',
+    email: '',
+    message: '',
+  });
 
-// const[userOptions, setUserOptions]= useState("")
+  const handleTextChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
 
-const handleTextChange = (e)=>{
-    setUserInput(e.target.value)
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Do something with the form data
+    console.log(formData);
+  };
 
-const handleSubmit = (e)=>{
-    e.preventDefault()
-}
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='fName'>First Name</label>
-                <input
-                id='fName'
-                type= 'text'
-                value={userInput}
-                onChange={handleTextChange}
-                placeholder='Jane'
-                required/>
-                <label htmlFor='lName'>Last Name</label>
-                <input
-                id='lName'
-                type= 'text'
-                value={userInput}
-                onChange={handleTextChange}
-                placeholder='Doe'
-                required/>
-                 <label htmlFor='email'>Email</label>
-                <input
-                id='email'
-                type= 'text'
-                value={userInput}
-                onChange={handleTextChange}
-                placeholder='Janedoe@gmail.com'
-                required/>
-                <label>Message Us</label>
-               <input
-               id='message'
-               type='text'
-               value={userInput}
-               onChange={handleTextChange}
-               placeholder='Your Message Here'/>
-                <br/>
-                <button className='submit' type='submit'>Submit</button>
-            </form>
-        </div>
-    );
+  return (
+    <Box>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          id="fName"
+          label="First Name"
+          type="text"
+          value={formData.fName}
+          onChange={handleTextChange}
+          placeholder="Jane"
+          required
+          fullWidth
+        />
+        <TextField
+          id="lName"
+          label="Last Name"
+          type="text"
+          value={formData.lName}
+          onChange={handleTextChange}
+          placeholder="Doe"
+          required
+          fullWidth
+        />
+        <TextField
+          id="email"
+          label="Email"
+          type="email"
+          value={formData.email}
+          onChange={handleTextChange}
+          placeholder="Janedoe@gmail.com"
+          required
+          fullWidth
+        />
+        <TextField
+          id="message"
+          label="Message Us"
+          type="text"
+          value={formData.message}
+          onChange={handleTextChange}
+          placeholder="Your Message Here"
+          fullWidth
+          multiline
+          rows={4}
+        />
+        <br />
+        <Button variant="contained" type="submit">
+          Submit
+        </Button>
+      </form>
+    </Box>
+  );
 };
 
 export default ContactUs;

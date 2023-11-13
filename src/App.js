@@ -7,7 +7,7 @@ import Show from "./pages/Show";
 import NavBar from "./componets/NavBar";
 import New from "./pages/New";
 import Index from "./pages/Index";
-// import Info from "./pages/Info";
+import InfoPage from "./pages/InfoPage";
 import Cart from "./componets/Cart";
 import Checkout from './componets/Checkout'
 import Footer from "./componets/Footer";
@@ -48,7 +48,7 @@ function App() {
           <Route path="/diamonds/new" element={<New cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/:id" element={<Show cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/:id/edit" element={<Edit />} />
-          {/* <Route path="/diamonds/Info" element={<Info/>}/> */}
+          <Route path="/diamonds/Info" element={<InfoPage/>}/>
           <Route path="/diamonds/cart" element={<Cart cart={cart} setCart={setCart} diamonds={diamonds} setDiamonds={setDiamonds}/>}/>
           <Route path="/diamonds/checkout" element={<Checkout cart={cart} setCart={setCart}/>}/>
           <Route path="/diamonds/contactus" element={<ContactUs />}/> 

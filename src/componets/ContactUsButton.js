@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ContactUs from './ContactUs'; 
+import Button from '@mui/material/Button';
+import './ContactUsButton.css';
 
 const ContactUsButton = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -10,7 +12,7 @@ const ContactUsButton = () => {
 
   return (
     <div>
-      <button onClick={toggleContactForm}>Contact Us</button>
+      <Button className='contact-us-button' onClick={toggleContactForm}>Contact Us</Button>
       {showContactForm && <ContactUs />} {/* Display the form if showContactForm is true */}
     </div>
   );
