@@ -40,4 +40,7 @@
   text-decoration: none;
 }
 
+.cart{
+  float: right;
+}
 /* AddShoppingCartOutlinedIcon styles can be added as needed */

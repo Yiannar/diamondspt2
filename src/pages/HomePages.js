@@ -75,13 +75,22 @@ const HomePage = ({cart, setCart}) => {
             <HomePageModal/>
 
             <MissionStatement/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h2 className='category'>Shop Now</h2>
+            <br/>
+            <br/>
             <ul>
                 {diamonds.map((diamond)=>(
                     <Diamond key={diamond.id} diamond={diamond} cart={cart} setCart={setCart} />
                     ))}
             </ul>
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <div className='homeimg-container'>
             {/* <img src={Home3} className='home-page-img'/> */}
             {/* <img src={Home2fixed} className='home-page-img'/> */}
@@ -89,6 +98,10 @@ const HomePage = ({cart, setCart}) => {
             {/* <img src={Home4} className='home-page-img'/> */}
            <OurPromise></OurPromise>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             </div>
         </div>
     );

@@ -54,6 +54,7 @@ function DiamondDetails() {
           <div className="diamond-details-container">
             <h1 className="diamond-shape">{diamond[0].shape}</h1>
             <h2 className="diamond-price">Price: {diamond[0].price}</h2>
+            
             <img className="diamond-image" src={diamond[0].image} alt='diamondpic'/>
             <Button onClick={() => addToCart(id)} className="add-to-cart-button">Add to Cart </Button>
             <ContactUsButton className='contact-us-button' />

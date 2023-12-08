@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Diamond.css";
 import {ShopContext} from '../context/diamond-context'
+import Button from '@mui/material/Button'
 
 function Diamond({ diamond }) {
   const { id, shape, image, price } = diamond;
@@ -18,9 +19,9 @@ function Diamond({ diamond }) {
           <h1>{shape}</h1>
           <img className="diamondimg" src={image} alt="diamonds" />
           <h4>Price: ${diamond.price}</h4>
-          <button className="addToCartBttn" onClick={() => addToCart(id)}>
+          <Button className="addToCartBttn" variant="contained" onClick={() => addToCart(id)}>
             Add to Cart {cartItemCount > 0 && <>({cartItemCount})</>}
-          </button>
+          </Button>
         </div>
       </Link>
     </div>

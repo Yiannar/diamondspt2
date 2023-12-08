@@ -59,8 +59,11 @@ const handleSubmit = (e)=>{
   
 
 return (
+  <>
+   <h2 className='title'>Enter a custom Diamond</h2>
+ 
     <div className='form-container'>
-       <h2 className='title'>Enter a custom Diamond</h2>
+       {/* <h2 className='title'>Enter a custom Diamond</h2> */}
             <img src={DiamondsLogo} className="form-img" />
            <div className='form-content'> 
             <Box
@@ -126,6 +129,7 @@ return (
     </Box>
     </div>
     </div>
+    </>
 )
 }
 

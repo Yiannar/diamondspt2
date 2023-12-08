@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import DiamondsLogo from '../assets/DiamondsLogo.png';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import Login from './Login';
 
 const NavBar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -41,6 +42,7 @@ const NavBar = () => {
               <AddShoppingCartOutlinedIcon size={32} />
             </Link>
           </li>
+          <button> Login </button>
         </ul>
       </nav>
     </div>

@@ -17,6 +17,7 @@ import Banner from "./componets/Banner";
 import axios from "axios";
 import {ShopContextProvider} from './context/diamond-context'
 import ErrorBoundary from './ErrorBoundary';
+import Login from "./componets/Login";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,6 +26,31 @@ function App() {
 
   const [cart, setCart] = useState([])
   const [diamonds, setDiamonds] = useState([])
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [userId, setUserId] = useState(() => {
+    const storedUserId = localStorage.getItem('userId');
+    return storedUserId ? storedUserId : '';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('userId', userId);
+  }, [userId]);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // Make API call to log in user
+    setIsLoggedIn(true);
+    setUsername('');
+    setPassword('');
+  };
+
+  const handleLogout = (event) => {
+    event.preventDefault();
+    // Make API call to log out user
+    setIsLoggedIn(false);
+  };
 
   useEffect(() => {
     axios
@@ -43,7 +69,21 @@ function App() {
         <Banner/>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route/>
+          <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
+          <Route path="/userprofile/:id" />
+          <Route path="/userprofile/edit"/> 
+          <Route path="/login"
+          element={
+            <Login 
+              username={username}
+              password={password}
+              setUsername={setUsername}
+              setPassword={setPassword}
+              handleLogin={handleLogin}
+              userId={userId}
+              setUserId={setUserId}/>
+          } />
           <Route path="/diamonds" element={<Index cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/new" element={<New cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/:id" element={<Show cart={cart} setCart={setCart}/>} />

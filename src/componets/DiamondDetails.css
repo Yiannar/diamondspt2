@@ -1,5 +1,6 @@
 
 .diamond-details-container {
+  background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -7,6 +8,7 @@
   width: 100%;
   margin-top: 20px;
   margin-left: 20px;
+  height: 100%;
 }
 
 .diamond-shape {

@@ -7,8 +7,7 @@ margin-right: 50px;
 .shop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px; /* Adjust the gap between diamonds */
-    background-color: white;
+    grid-gap: 50px; 
     padding: 20px; /* Adjust padding as needed */
     margin-left: 30px;
   }
