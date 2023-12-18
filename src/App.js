@@ -83,7 +83,7 @@ function App() {
               handleLogin={handleLogin}
               userId={userId}
               setUserId={setUserId}/>
-          } />
+          }/>
           <Route path="/diamonds" element={<Index cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/new" element={<New cart={cart} setCart={setCart}/>} />
           <Route path="/diamonds/:id" element={<Show cart={cart} setCart={setCart}/>} />

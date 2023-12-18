@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './Banner.css'
 
 const Banner = () => {
@@ -12,8 +14,11 @@ const Banner = () => {
 
     const handlePrevious = () => {
         const newIndex = (index - 1 + messages.length) % messages.length;
+      
         setIndex(newIndex);
-    }
+        console.log('Previous Index:', index);
+        console.log('New Index:', newIndex);
+    }    
 
     const handleNext = () => {
         const newIndex = (index + 1) % messages.length;
@@ -42,13 +47,13 @@ const Banner = () => {
     return (
         <div className="banner">
             <div className="banner-buttons">
-                <button onClick={handlePrevious}>Previous</button>
+                <ArrowBackIosIcon onClick={handlePrevious}/>
             </div>
             <div className="banner-content">
                 <p>{messages[index]}</p>
             </div>
             <div className="banner-buttons">
-                <button onClick={handleNext}>Next</button>
+                <ArrowForwardIosIcon onClick={handleNext}/>
             </div>
             <div className="banner-navigation">
                 {/* <a href="/about-us">About Us</a>

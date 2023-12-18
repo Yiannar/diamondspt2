@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import DiamondsLogo from '../assets/DiamondsLogo.png';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Login from './Login';
 
 const NavBar = () => {
@@ -38,11 +39,14 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
+          <Link to='/Login'> <PersonOutlineIcon size={32}/> </Link>
+          </li>
+          <li>
             <Link to="/diamonds/cart" className={styles.cart}>
               <AddShoppingCartOutlinedIcon size={32} />
             </Link>
           </li>
-          <button> Login </button>
+          
         </ul>
       </nav>
     </div>
